@@ -1,0 +1,5 @@
+/* Reduce the size of the custom logo image */
+.custom-logo {
+  max-height: 40px;
+  width: auto;
+}

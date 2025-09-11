@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom logo size for header */
+.tailwind-logo {
+	@apply h-10 w-auto;
+}
+
+
