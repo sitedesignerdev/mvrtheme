@@ -12,7 +12,7 @@
             <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
                 <div class="h-80 overflow-hidden">
                     <img 
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/matodzi-ratshimbilani.jpg" 
+                        src="<?php echo get_template_directory_uri(); ?>/src/images/Matodzi.png" 
                         alt="Matodzi Ratshimbilani - Managing Director" 
                         class="w-full h-full object-cover"
                     >
@@ -20,7 +20,7 @@
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-primary mb-1">Matodzi Ratshimbilani</h3>
                     <p class="text-accent font-semibold mb-3">Managing Director</p>
-                    <p class="text-gray-600 mb-4">Co-founder of leading South African commercial firms with extensive experience in top-five law firms, bringing strategic vision to MVR Attorneys.</p>
+                    <p class="text-gray-600 mb-4">Matodzi Ratshimbilani focuses on Corporate Commercial Law including Mergers and Acquisitions, Corporate Governance, Commercial Contracts and Company Law.</p>
                     <div class="flex space-x-3">
                         <a href="#" class="text-primary hover:text-accent transition-colors duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -40,15 +40,15 @@
             <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
                 <div class="h-80 overflow-hidden">
                     <img 
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/senior-partner-1.jpg" 
+                        src="<?php echo get_template_directory_uri(); ?>/src/images/Eduan.png" 
                         alt="Senior Partner - Corporate Law" 
                         class="w-full h-full object-cover"
                     >
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary mb-1">David Nkosi</h3>
-                    <p class="text-accent font-semibold mb-3">Senior Partner, Corporate Law</p>
-                    <p class="text-gray-600 mb-4">Specializes in mergers and acquisitions with over 20 years of experience guiding businesses through complex corporate transactions.</p>
+                    <h3 class="text-xl font-bold text-primary mb-1">Eduan Kapp</h3>
+                    <p class="text-accent font-semibold mb-3">Executive – Banking & Finance</p>
+                    <p class="text-gray-600 mb-4">Eduan is a seasoned lawyer and ex-investment banker with extensive transactional experience throughout Sub-Sahara Africa and other emerging markets.</p>
                     <div class="flex space-x-3">
                         <a href="#" class="text-primary hover:text-accent transition-colors duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -63,15 +63,15 @@
             <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
                 <div class="h-80 overflow-hidden">
                     <img 
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/senior-partner-2.jpg" 
+                        src="<?php echo get_template_directory_uri(); ?>/src/images/Robyn.png" 
                         alt="Senior Partner - Dispute Resolution" 
                         class="w-full h-full object-cover"
                     >
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary mb-1">Thandiwe Mbeki</h3>
-                    <p class="text-accent font-semibold mb-3">Senior Partner, Dispute Resolution</p>
-                    <p class="text-gray-600 mb-4">Leads our litigation practice with a remarkable track record in high-stakes commercial disputes and arbitration proceedings.</p>
+                    <h3 class="text-xl font-bold text-primary mb-1">Robyn Adams</h3>
+                    <p class="text-accent font-semibold mb-3">Executive – Dispute Resolution</p>
+                    <p class="text-gray-600 mb-4">Robyn Adams is a results-orientated with a proven knowledge of, inter alia, alternative dispute resolution, complex civil litigation, and trial law in various fields including construction law, commercial law, and property law.</p>
                     <div class="flex space-x-3">
                         <a href="#" class="text-primary hover:text-accent transition-colors duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
