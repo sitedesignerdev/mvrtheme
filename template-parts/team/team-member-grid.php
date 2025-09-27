@@ -7,7 +7,7 @@
                 <div class="relative">
                     <div class="h-80 overflow-hidden">
                         <img 
-                            src="<?php echo get_template_directory_uri(); ?>/assets/images/team/james-mitchell.jpg" 
+                            src="<?php echo get_template_directory_uri(); ?>/src/images/Matodzi.png" 
                             alt="James Mitchell" 
                             class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                         >
@@ -17,10 +17,10 @@
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary mb-1">James Mitchell</h3>
-                    <p class="text-accent font-semibold mb-2">Corporate Commercial</p>
+                    <h3 class="text-xl font-bold text-primary mb-1">Matodzi Ratshimbilani</h3>
+                    <p class="text-accent font-semibold mb-2">Managing Director</p>
                     <p class="text-gray-600 text-sm mb-4">Sandton Office</p>
-                    <p class="text-gray-600 mb-6 line-clamp-3">Senior partner with over 20 years of experience in corporate law, specializing in mergers and acquisitions for Fortune 500 companies.</p>
+                    <p class="text-gray-600 mb-6 line-clamp-3">Matodzi Ratshimbilani focuses on Corporate Commercial Law including Mergers and Acquisitions, Corporate Governance, Commercial Contracts and Company Law.</p>
                     
                     <div class="flex justify-between items-center">
                         <div class="flex space-x-3">
@@ -47,7 +47,7 @@
                 <div class="relative">
                     <div class="h-80 overflow-hidden">
                         <img 
-                            src="<?php echo get_template_directory_uri(); ?>/assets/images/team/sarah-johnson.jpg" 
+                            src="<?php echo get_template_directory_uri(); ?>/src/images/Eduan.png" 
                             alt="Sarah Johnson" 
                             class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                         >
@@ -57,10 +57,10 @@
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary mb-1">Sarah Johnson</h3>
-                    <p class="text-accent font-semibold mb-2">Banking & Finance</p>
+                    <h3 class="text-xl font-bold text-primary mb-1">Eduan Kapp</h3>
+                    <p class="text-accent font-semibold mb-2">Executive – Banking & Finance</p>
                     <p class="text-gray-600 text-sm mb-4">Sandton Office</p>
-                    <p class="text-gray-600 mb-6 line-clamp-3">Leads our banking and finance practice with extensive experience in regulatory compliance and international financial transactions.</p>
+                    <p class="text-gray-600 mb-6 line-clamp-3">Eduan is a seasoned lawyer and ex-investment banker with extensive transactional experience throughout Sub-Sahara Africa and other emerging markets.</p>
                     
                     <div class="flex justify-between items-center">
                         <div class="flex space-x-3">
@@ -87,7 +87,7 @@
                 <div class="relative">
                     <div class="h-80 overflow-hidden">
                         <img 
-                            src="<?php echo get_template_directory_uri(); ?>/assets/images/team/robert-williams.jpg" 
+                            src="<?php echo get_template_directory_uri(); ?>/src/images/Robyn.png" 
                             alt="Robert Williams" 
                             class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                         >
@@ -98,9 +98,9 @@
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold text-primary mb-1">Robert Williams</h3>
-                    <p class="text-accent font-semibold mb-2">Dispute Resolution</p>
+                    <p class="text-accent font-semibold mb-2">Executive – Dispute Resolution</p>
                     <p class="text-gray-600 text-sm mb-4">Claremont Office</p>
-                    <p class="text-gray-600 mb-6 line-clamp-3">Specializes in complex commercial litigation and arbitration with a remarkable success rate in high-stakes dispute resolution.</p>
+                    <p class="text-gray-600 mb-6 line-clamp-3">Robyn Adams is a results-orientated with a proven knowledge of, inter alia, alternative dispute resolution, complex civil litigation, and trial law in various fields including construction law, commercial law, and property law.</p>
                     
                     <div class="flex justify-between items-center">
                         <div class="flex space-x-3">
@@ -127,7 +127,7 @@
                 <div class="relative">
                     <div class="h-80 overflow-hidden">
                         <img 
-                            src="<?php echo get_template_directory_uri(); ?>/assets/images/team/michael-chen.jpg" 
+                            src="<?php echo get_template_directory_uri(); ?>/src/images/Maphanga.png" 
                             alt="Michael Chen" 
                             class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                         >
@@ -137,10 +137,10 @@
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary mb-1">Michael Chen</h3>
-                    <p class="text-accent font-semibold mb-2">Energy Practice</p>
+                    <h3 class="text-xl font-bold text-primary mb-1">Maphanga Maseko</h3>
+                    <p class="text-accent font-semibold mb-2">Competition Law</p>
                     <p class="text-gray-600 text-sm mb-4">Sandton Office</p>
-                    <p class="text-gray-600 mb-6 line-clamp-3">Focuses on energy sector regulations, renewable energy projects, and complex energy transactions across South Africa.</p>
+                    <p class="text-gray-600 mb-6 line-clamp-3">Maphanga is a results-driven professional and has proven knowledge of, inter alia, competition law, commercial law, mergers and acquisition law, in various fields including telecommunications, National Credit Regulator, corporate governance and energy.</p>
                     
                     <div class="flex justify-between items-center">
                         <div class="flex space-x-3">
@@ -162,7 +162,7 @@
                 <div class="relative">
                     <div class="h-80 overflow-hidden">
                         <img 
-                            src="<?php echo get_template_directory_uri(); ?>/assets/images/team/priya-patel.jpg" 
+                            src="<?php echo get_template_directory_uri(); ?>/src/images/Mashudu.png" 
                             alt="Priya Patel" 
                             class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                         >
@@ -172,7 +172,7 @@
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary mb-1">Priya Patel</h3>
+                    <h3 class="text-xl font-bold text-primary mb-1">Mashudu Mundalamo</h3>
                     <p class="text-accent font-semibold mb-2">Competition Law</p>
                     <p class="text-gray-600 text-sm mb-4">Claremont Office</p>
                     <p class="text-gray-600 mb-6 line-clamp-3">Expert in antitrust matters, merger control, and competition compliance with extensive experience in regulatory investigations.</p>
@@ -202,7 +202,7 @@
                 <div class="relative">
                     <div class="h-80 overflow-hidden">
                         <img 
-                            src="<?php echo get_template_directory_uri(); ?>/assets/images/team/david-brown.jpg" 
+                            src="<?php echo get_template_directory_uri(); ?>/src/images/tana.png" 
                             alt="David Brown" 
                             class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                         >
@@ -212,10 +212,11 @@
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary mb-1">David Brown</h3>
-                    <p class="text-accent font-semibold mb-2">Labour & Employment</p>
+                    <h3 class="text-xl font-bold text-primary mb-1">Mashudu Mundalamo</h3>
+                    <p class="text-accent font-semibold mb-2">Labour & Employment Law</p>
                     <p class="text-gray-600 text-sm mb-4">Sandton Office</p>
-                    <p class="text-gray-600 mb-6 line-clamp-3">Specializes in workplace law, employment contracts, dispute resolution, and compliance with labour regulations.</p>
+                    <p class="text-gray-600 mb-6 line-clamp-3">Mashudu is an accomplished Human Resource (HR) Manager and Employee Relations (ER) Manager with 19 years’ worth of experience in South Africa’s leading companies and organisations. Mashudu is a focused, problem-solver, mediator, professional and dedicated leader who is dedicated to harmonising
+employee relations and promoting social justice.</p>
                     
                     <div class="flex justify-between items-center">
                         <div class="flex space-x-3">

@@ -83,7 +83,7 @@
       ));
       ?>
       <div class="mt-4 pt-4 border-t border-gray-200">
-        <a href="#consultation" class="block bg-accent text-primary text-center font-bold px-5 py-3 rounded hover:bg-yellow-400 transition duration-300">Schedule Consultation</a>
+        <a href="#consultation" class="block bg-accent text-primary visited:text-primary text-center font-bold px-5 py-3 rounded hover:bg-yellow-400 transition duration-300">Schedule Consultation</a>
       </div>
     </div>
   </div>

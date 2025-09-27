@@ -10,17 +10,19 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             <!-- Team Member 1 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-                <div class="h-72 overflow-hidden">
+                <div class="h-80 overflow-hidden">
                     <img 
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/team-member-1.jpg" 
+                        src="<?php echo get_template_directory_uri(); ?>/src/images/Matodzi.png" 
                         alt="Senior Attorney" 
                         class="w-full h-full object-cover"
                     >
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary mb-1">James Mitchell</h3>
-                    <p class="text-accent font-semibold mb-3">Senior Partner, Corporate Law</p>
-                    <p class="text-gray-600 mb-4">With over 20 years of experience in corporate law, James specializes in mergers and acquisitions, providing strategic counsel to Fortune 500 companies.</p>
+                    <h3 class="text-xl font-bold text-primary mb-1">Matodzi Ratshimbilani</h3>
+                    <p class="text-accent font-semibold mb-3">Managing Director</p>
+                    <p class="text-gray-600 mb-4">
+                    Matodzi Ratshimbilani focuses on Corporate Commercial Law including Mergers and Acquisitions, Corporate Governance, Commercial Contracts and Company Law.
+                    </p>
                     <div class="flex space-x-3">
                         <a href="#" class="text-primary hover:text-accent transition-colors duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -43,17 +45,17 @@
 
             <!-- Team Member 2 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-                <div class="h-72 overflow-hidden">
+                <div class="h-80 overflow-hidden">
                     <img 
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/team-member-2.jpg" 
+                        src="<?php echo get_template_directory_uri(); ?>/src/images/Eduan.png" 
                         alt="Finance Attorney" 
                         class="w-full h-full object-cover"
                     >
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary mb-1">Sarah Johnson</h3>
-                    <p class="text-accent font-semibold mb-3">Partner, Banking & Finance</p>
-                    <p class="text-gray-600 mb-4">Sarah leads our banking and finance practice, with extensive experience in regulatory compliance, financial transactions, and international banking law.</p>
+                    <h3 class="text-xl font-bold text-primary mb-1">Eduan Kapp</h3>
+                    <p class="text-accent font-semibold mb-3">Executive – Banking & Finance</p>
+                    <p class="text-gray-600 mb-4">Eduan is a seasoned lawyer and ex-investment banker with extensive transactional experience throughout Sub-Sahara Africa and other emerging markets.</p>
                     <div class="flex space-x-3">
                         <a href="#" class="text-primary hover:text-accent transition-colors duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -71,17 +73,17 @@
 
             <!-- Team Member 3 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-                <div class="h-72 overflow-hidden">
+                <div class="h-80 overflow-hidden">
                     <img 
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/team-member-3.jpg" 
+                        src="<?php echo get_template_directory_uri(); ?>/src/images/Robyn.png" 
                         alt="Dispute Resolution Attorney" 
                         class="w-full h-full object-cover"
                     >
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary mb-1">Robert Williams</h3>
-                    <p class="text-accent font-semibold mb-3">Partner, Dispute Resolution</p>
-                    <p class="text-gray-600 mb-4">Robert specializes in complex commercial litigation and arbitration, with a remarkable success rate in high-stakes dispute resolution cases.</p>
+                    <h3 class="text-xl font-bold text-primary mb-1">Robyn Adams</h3>
+                    <p class="text-accent font-semibold mb-3">Executive – Dispute Resolution</p>
+                    <p class="text-gray-600 mb-4">Robyn Adams is a results-orientated with a proven knowledge of, inter alia, alternative dispute resolution, complex civil litigation, and trial law in various fields including construction law, commercial law, and property law.</p>
                     <div class="flex space-x-3">
                         <a href="#" class="text-primary hover:text-accent transition-colors duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">

@@ -1,3 +1,15 @@
+a.bg-accent.text-primary:visited {
+  color: #00558D !important;
+}
+
+a.border-2.border-white.text-white:visited {
+  color: #ffffff !important;
+}
+
+a.border-2.border-white.text-white:hover {
+  color: #00558D !important;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,5 +18,3 @@
 .tailwind-logo {
 	@apply h-10 w-auto;
 }
-
-

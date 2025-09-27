@@ -69,18 +69,3 @@
     </div>
   </div>
 </section>
-
-<!-- Trust Indicators -->
-<div class="bg-gray-100 py-12">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-serif font-bold text-center text-primary mb-12">Trusted By Industry Leaders</h2>
-    <div class="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
-      <!-- Replace these divs with actual client logos -->
-      <div class="h-12 w-32 bg-gray-300 rounded opacity-70"></div>
-      <div class="h-12 w-32 bg-gray-300 rounded opacity-70"></div>
-      <div class="h-12 w-32 bg-gray-300 rounded opacity-70"></div>
-      <div class="h-12 w-32 bg-gray-300 rounded opacity-70"></div>
-      <div class="h-12 w-32 bg-gray-300 rounded opacity-70"></div>
-    </div>
-  </div>
-</div>
