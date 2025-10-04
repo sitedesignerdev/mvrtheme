@@ -1,5 +1,18 @@
 <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
+        <!-- Practice Filter Dropdown -->
+        <div class="mb-8 flex justify-end">
+            <label for="practice-filter" class="mr-2 font-semibold text-primary">Filter by Practice:</label>
+            <select id="practice-filter" class="border border-gray-300 rounded px-3 py-2">
+                <option value="all">All</option>
+                <option value="corporate">Corporate</option>
+                <option value="banking">Banking</option>
+                <option value="dispute">Dispute</option>
+                <option value="energy">Energy</option>
+                <option value="competition">Competition</option>
+                <option value="labour">Labour</option>
+            </select>
+        </div>
         <!-- Team Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Team Member 1 -->
@@ -253,14 +266,28 @@ employee relations and promoting social justice.</p>
 </style>
 
 <script>
-// This would integrate with your filter system from the previous section
+// Practice filter system
 document.addEventListener('DOMContentLoaded', function() {
-    const loadMoreBtn = document.getElementById('load-more');
-    
-    loadMoreBtn.addEventListener('click', function() {
-        // In a real implementation, this would load more team members via AJAX
-        alert('Loading more attorneys...');
-        // You would typically make an AJAX request to load more team members
+    const practiceFilter = document.getElementById('practice-filter');
+    const teamMembers = document.querySelectorAll('.team-member');
+
+    practiceFilter.addEventListener('change', function() {
+        const selected = this.value;
+        teamMembers.forEach(function(member) {
+            if (selected === 'all' || member.dataset.practice === selected) {
+                member.style.display = '';
+            } else {
+                member.style.display = 'none';
+            }
+        });
     });
+
+    // Load More button (unchanged)
+    const loadMoreBtn = document.getElementById('load-more');
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            alert('Loading more attorneys...');
+        });
+    }
 });
 </script>
