@@ -13,6 +13,9 @@ module.exports = {
         primary: '#00558D',
         accent: '#fed310',
       },
+      fontFamily: {
+        sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
     },
   },
   plugins: [],

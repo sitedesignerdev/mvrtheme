@@ -1,3 +1,7 @@
+/* Ensure Montserrat is applied globally */
+/* body {
+  font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+} */
 a.bg-accent.text-primary:visited {
   color: #00558D !important;
 }

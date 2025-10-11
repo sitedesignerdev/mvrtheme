@@ -102,6 +102,38 @@ function mvrtheme_setup() {
 }
 add_action( 'after_setup_theme', 'mvrtheme_setup' );
 
+// Enqueue Montserrat Google Font
+
+function theme_enqueue_styles() {
+    wp_enqueue_style(
+        'montserrat-font',
+        'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap',
+        [],
+        null
+    );
+}
+add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
+
+
+// Calculate reading time
+function calculate_reading_time() {
+    $content = get_post_field('post_content', get_the_ID());
+    $word_count = str_word_count(strip_tags($content));
+    $reading_time = ceil($word_count / 200); // 200 words per minute
+    return $reading_time;
+}
+
+// Make it available in templates
+function display_reading_time() {
+    $reading_time = calculate_reading_time();
+    if ($reading_time > 0) {
+        return $reading_time . ' min read';
+    }
+    return 'Quick read';
+}
+
+
+
 function mvrtheme_enqueue_styles() {
     wp_enqueue_style(
         'mvrtheme-styles', 
@@ -118,6 +150,47 @@ function theme_setup() {
   ));
 }
 add_action('after_setup_theme', 'theme_setup');
+
+// Register Team Members Custom Post Type
+function register_team_members_cpt() {
+    $labels = array(
+        'name' => 'Team Members',
+        'singular_name' => 'Team Member',
+        'menu_name' => 'Team Members',
+        'name_admin_bar' => 'Team Member',
+        'add_new' => 'Add New',
+        'add_new_item' => 'Add New Team Member',
+        'new_item' => 'New Team Member',
+        'edit_item' => 'Edit Team Member',
+        'view_item' => 'View Team Member',
+        'all_items' => 'All Team Members',
+        'search_items' => 'Search Team Members',
+        'not_found' => 'No team members found.',
+        'not_found_in_trash' => 'No team members found in Trash.'
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'team'),
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-businessperson',
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'show_in_rest' => true,
+    );
+
+    register_post_type('team_member', $args);
+}
+add_action('init', 'register_team_members_cpt');
+
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *

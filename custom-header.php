@@ -17,13 +17,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+
 	<?php wp_head(); ?>
 </head>
 
 <header class="bg-[#00558D] shadow-md sticky top-0 z-50 ">
   <div class="mx-auto px-4 max-w-6xl">
 
-    <div class="flex items-center py-4 relative">
+    <div class="font-sans flex items-center py-4 relative">
       <!-- Logo -->
       <div class="flex items-center flex-shrink-0">
         <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center">

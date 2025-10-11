@@ -14,8 +14,8 @@
   <div class="container mx-auto max-w-6xl relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <!-- Left Column - Text Content -->
-      <div class="text-white text-center lg:text-left">
-        <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+      <div class="font-sans text-white text-center lg:text-left">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
           Corporate & Commercial Legal Solutions You Can Trust
         </h1>
         <p class="text-xl mb-8 opacity-90">

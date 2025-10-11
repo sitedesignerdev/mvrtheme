@@ -20,7 +20,7 @@
       <!-- Brand Column -->
       <div class="lg:col-span-1">
         <div class="mb-6">
-          <h3 class="text-2xl font-serif font-bold">MVR Attorneys</h3>
+          <h3 class="text-2xl font-sans font-bold">MVR Attorneys</h3>
           <p class="text-accent font-semibold mt-1">Corporate & Commercial Law Specialists</p>
         </div>
         <p class="text-gray-300 mb-6">

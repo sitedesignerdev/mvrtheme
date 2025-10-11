@@ -1,8 +1,8 @@
 <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-4 ">
         <!-- Practice Filter Dropdown -->
         <div class="mb-8 flex justify-end">
-            <label for="practice-filter" class="mr-2 font-semibold text-primary">Filter by Practice:</label>
+            <label for="practice-filter" class="mr-2 font-sans font-semibold text-primary">Filter by Practice:</label>
             <select id="practice-filter" class="border border-gray-300 rounded px-3 py-2">
                 <option value="all">All</option>
                 <option value="corporate">Corporate</option>
@@ -229,7 +229,7 @@
                     <p class="text-accent font-semibold mb-2">Labour & Employment Law</p>
                     <p class="text-gray-600 text-sm mb-4">Sandton Office</p>
                     <p class="text-gray-600 mb-6 line-clamp-3">Mashudu is an accomplished Human Resource (HR) Manager and Employee Relations (ER) Manager with 19 years’ worth of experience in South Africa’s leading companies and organisations. Mashudu is a focused, problem-solver, mediator, professional and dedicated leader who is dedicated to harmonising
-employee relations and promoting social justice.</p>
+                   employee relations and promoting social justice.</p>
                     
                     <div class="flex justify-between items-center">
                         <div class="flex space-x-3">
