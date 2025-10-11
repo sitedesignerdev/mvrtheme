@@ -151,6 +151,57 @@ function theme_setup() {
 }
 add_action('after_setup_theme', 'theme_setup');
 
+
+// Gutenberg Editor Styles
+function mvr_enqueue_gutenberg_styles() {
+    // Add support for editor styles
+    add_theme_support('editor-styles');
+    
+    // Enqueue the editor styles
+    add_editor_style('style.css');
+    add_editor_style('src/gutenberg.css');
+    
+    // Enqueue frontend styles for blocks
+    wp_enqueue_style(
+        'mvr-gutenberg-frontend',
+        get_template_directory_uri() . '/src/gutenberg.css',
+        array(),
+        '1.0.0'
+    );
+}
+add_action('after_setup_theme', 'mvr_enqueue_gutenberg_styles');
+
+
+// Tailwind CSS Integration
+function mvr_theme_setup() {
+    // Add support for wide and full alignment
+    add_theme_support('align-wide');
+    
+    // Add support for custom block styles
+    add_theme_support('wp-block-styles');
+    
+    // Add support for editor color palette
+    add_theme_support('editor-color-palette', array(
+        array(
+            'name'  => 'Primary',
+            'slug'  => 'primary',
+            'color' => '#00558D',
+        ),
+        array(
+            'name'  => 'Accent',
+            'slug'  => 'accent',
+            'color' => '#fed310',
+        ),
+        array(
+            'name'  => 'Light Gray',
+            'slug'  => 'light-gray',
+            'color' => '#f7f7f7',
+        ),
+    ));
+}
+add_action('after_setup_theme', 'mvr_theme_setup');
+
+
 // Register Team Members Custom Post Type
 function register_team_members_cpt() {
     $labels = array(

@@ -48,5 +48,8 @@
     "dev": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch",
     "build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify"
   },
-  "main": "index.js"
+  "main": "index.js",
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.19"
+  }
 }

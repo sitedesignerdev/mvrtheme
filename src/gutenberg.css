@@ -1,0 +1,46 @@
+/* src/gutenberg.css */
+.wp-block-group,
+.wp-block-columns,
+.wp-block-media-text {
+  @apply my-8;
+}
+
+.wp-block-image {
+  @apply my-8;
+}
+
+.wp-block-image img {
+  @apply rounded-lg shadow-md;
+}
+
+.wp-block-quote {
+  @apply border-l-4 border-accent bg-gray-50 py-4 px-6 my-8;
+}
+
+.wp-block-quote p {
+  @apply text-lg text-gray-700 italic;
+}
+
+.wp-block-table {
+  @apply w-full my-8 shadow-md rounded-lg overflow-hidden;
+}
+
+.wp-block-table table {
+  @apply w-full;
+}
+
+.wp-block-table th {
+  @apply bg-primary text-white px-4 py-3 text-left;
+}
+
+.wp-block-table td {
+  @apply border-b border-gray-200 px-4 py-3;
+}
+
+.wp-block-button__link {
+  @apply bg-accent text-primary px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition duration-300 no-underline;
+}
+
+.wp-block-cover {
+  @apply rounded-lg my-8;
+}

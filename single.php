@@ -26,7 +26,7 @@ if ( have_posts() ) :
 	<section class="relative py-20 bg-primary">
 		<!-- Background Image with Overlay -->
 		<div class="absolute inset-0 z-0">
-			<div class="absolute inset-0 bg-primary opacity-90"></div>
+			<div class="absolute inset-0 bg-black opacity-60"></div>
 			<?php if ($featured_image): ?>
 				<img src="<?php echo esc_url($featured_image); ?>" alt="<?php the_title_attribute(); ?>" class="w-full h-full object-cover">
 			<?php endif; ?>
@@ -96,9 +96,64 @@ if ( have_posts() ) :
         <div class="max-w-4xl mx-auto">
           
           <!-- Article Content -->
-          <article class="prose prose-lg max-w-none">
+          <article class="prose prose-lg max-w-none 
+                prose-headings:font-serif 
+                prose-headings:text-primary
+                prose-headings:font-bold
+                prose-h1:text-4xl
+                prose-h2:text-3xl
+                prose-h3:text-2xl
+                prose-h4:text-xl
+                prose-p:text-gray-700
+                prose-p:leading-relaxed
+                prose-p:mb-6
+                prose-a:text-accent
+                prose-a:no-underline
+                prose-a:hover:text-yellow-600
+                prose-a:font-semibold
+                prose-strong:text-primary
+                prose-strong:font-semibold
+                prose-blockquote:border-l-4
+                prose-blockquote:border-accent
+                prose-blockquote:bg-gray-50
+                prose-blockquote:py-4
+                prose-blockquote:px-6
+                prose-blockquote:rounded-r-lg
+                prose-blockquote:italic
+                prose-ul:list-disc
+                prose-ul:pl-6
+                prose-ol:list-decimal
+                prose-ol:pl-6
+                prose-li:marker:text-primary
+                prose-li:mb-2
+                prose-table:w-full
+                prose-table:shadow-md
+                prose-table:rounded-lg
+                prose-table:overflow-hidden
+                prose-th:bg-primary
+                prose-th:text-white
+                prose-th:px-4
+                prose-th:py-3
+                prose-td:border-b
+                prose-td:border-gray-200
+                prose-td:px-4
+                prose-td:py-3
+                prose-img:rounded-lg
+                prose-img:shadow-md
+                prose-pre:bg-gray-800
+                prose-pre:text-white
+                prose-pre:p-4
+                prose-pre:rounded-lg
+                prose-code:text-gray-800
+                prose-code:bg-gray-100
+                prose-code:px-2
+                prose-code:py-1
+                prose-code:rounded
+                prose-lead:text-xl
+                prose-lead:text-gray-600
+                prose-lead:font-semibold">
             <?php the_content(); ?>
-            
+        
             <?php
             // Pagination for multi-page posts
             wp_link_pages(array(
