@@ -104,8 +104,11 @@ class Primary_Menu_Walker extends Walker_Nav_Menu {
     // Check if this item is the current/active page
     $is_active = in_array('current-menu-item', $classes) || in_array('current_page_item', $classes);
 
-    // Default link classes
-    $link_classes = 'text-white visited:text-white hover:text-gray-300 font-medium transition duration-200 flex items-center';
+    if ($depth > 0) {
+      $link_classes = 'block w-full text-primary hover:text-accent font-medium px-4 py-2 rounded-lg transition duration-200 font-sans';
+    } else {
+      $link_classes = 'text-white visited:text-white hover:text-gray-300 font-medium transition duration-200 flex items-center font-sans';
+    }
 
     // Override if active
     if ($is_active) {
@@ -124,7 +127,7 @@ class Primary_Menu_Walker extends Walker_Nav_Menu {
     $output .= '</a>';
 
     if ($has_children && $depth === 0) {
-      $output .= '<div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">';
+      $output .= '<div class="absolute left-0 mt-2 min-w-[12rem] bg-white border border-gray-200 rounded-xl shadow-2xl py-3 px-2 space-y-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">';
     }
   }
 
@@ -156,12 +159,28 @@ class Primary_Menu_Walker extends Walker_Nav_Menu {
 class Mobile_Menu_Walker extends Walker_Nav_Menu {
   function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
     $classes = empty($item->classes) ? array() : (array) $item->classes;
-    $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item));
-    
+    $has_children = in_array('menu-item-has-children', $classes);
     $output .= '<div class="mobile-menu-item">';
-    $output .= '<a href="' . $item->url . '" class="block py-2 px-4 text-gray-700 hover:bg-primary hover:text-white rounded transition duration-200">';
-    $output .= $item->title;
-    $output .= '</a>';
+    if ($has_children && $depth === 0) {
+      $output .= '<button type="button" class="w-full flex justify-between items-center py-2 px-4 text-primary hover:text-accent hover:bg-primary rounded transition duration-200 mobile-dropdown-toggle">';
+      $output .= '<span>' . $item->title . '</span>';
+      $output .= '<svg class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>';
+      $output .= '</button>';
+    } else {
+  $output .= '<a href="' . $item->url . '" class="block py-2 px-4 text-white hover:text-accent hover:bg-primary rounded transition duration-200 mobile-menu-link">';
+      $output .= $item->title;
+      $output .= '</a>';
+    }
+  }
+  function start_lvl(&$output, $depth = 0, $args = array()) {
+    if ($depth === 0) {
+      $output .= '<div class="mobile-dropdown hidden pl-4">';
+    } else {
+      $output .= '<div class="pl-4">';
+    }
+  }
+  function end_lvl(&$output, $depth = 0, $args = array()) {
+    $output .= '</div>';
   }
   
   function end_el(&$output, $item, $depth = 0, $args = array()) {
@@ -175,19 +194,30 @@ class Mobile_Menu_Walker extends Walker_Nav_Menu {
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
-  
+
   mobileMenuButton.addEventListener('click', function() {
     mobileMenu.classList.toggle('hidden');
   });
-  
+
   // Close mobile menu when clicking outside
   document.addEventListener('click', function(event) {
     const isClickInsideMenu = mobileMenu.contains(event.target);
     const isClickOnMenuButton = mobileMenuButton.contains(event.target);
-    
+
     if (!isClickInsideMenu && !isClickOnMenuButton && !mobileMenu.classList.contains('hidden')) {
       mobileMenu.classList.add('hidden');
     }
+  });
+
+  // Dropdown toggle for mobile menu
+  document.querySelectorAll('.mobile-dropdown-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const dropdown = btn.parentElement.querySelector('.mobile-dropdown');
+      if (dropdown) {
+        dropdown.classList.toggle('hidden');
+      }
+    });
   });
 });
 </script>

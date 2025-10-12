@@ -1,3 +1,7 @@
+/* Force mobile menu links to stay white even when visited */
+a.mobile-menu-link:visited {
+  color: #ffffff !important;
+}
 /* Ensure Montserrat is applied globally */
 /* body {
   font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
