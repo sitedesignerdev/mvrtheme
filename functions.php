@@ -241,6 +241,35 @@ function register_team_members_cpt() {
 }
 add_action('init', 'register_team_members_cpt');
 
+// Register Practice Areas Taxonomy for Team Members
+
+function register_team_practice_areas() {
+    $labels = array(
+        'name' => 'Practice Areas',
+        'singular_name' => 'Practice Area',
+        'search_items' => 'Search Practice Areas',
+        'all_items' => 'All Practice Areas',
+        'edit_item' => 'Edit Practice Area',
+        'update_item' => 'Update Practice Area',
+        'add_new_item' => 'Add New Practice Area',
+        'new_item_name' => 'New Practice Area Name',
+        'menu_name' => 'Practice Areas'
+    );
+
+    $args = array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'practice-area'),
+        'show_in_rest' => true
+    );
+
+    register_taxonomy('practice_area', 'team_member', $args);
+}
+add_action('init', 'register_team_practice_areas');
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

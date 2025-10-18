@@ -42,7 +42,7 @@ $categories = get_categories(array(
 <section class="relative py-20 bg-primary">
   <div class="absolute inset-0 bg-black opacity-50"></div>
   <div class="relative container mx-auto px-4 text-center text-white">
-    <h1 class="text-4xl md:text-5xl font-serif font-bold mb-6">News & Insights</h1>
+  <h1 class="text-4xl md:text-5xl font-sans font-bold mb-6">News & Insights</h1>
     <p class="text-xl max-w-3xl mx-auto mb-8">
       Expert analysis, legal updates, and insights from MVR Attorneys' corporate and commercial law specialists
     </p>
@@ -80,7 +80,7 @@ $categories = get_categories(array(
 <section id="featured" class="py-16 bg-gray-50">
   <div class="container mx-auto px-4">
     <div class="text-center max-w-3xl mx-auto mb-12">
-      <h2 class="text-3xl font-serif font-bold text-primary mb-4">Featured Insights</h2>
+  <h2 class="text-3xl font-sans font-bold text-primary mb-4">Featured Insights</h2>
       <p class="text-gray-700">In-depth analysis and expert commentary on current legal developments</p>
     </div>
 
@@ -182,7 +182,7 @@ $categories = get_categories(array(
 <section id="all-articles" class="py-16 bg-white">
   <div class="container mx-auto px-4">
     <div class="flex justify-between items-center mb-8">
-      <h2 class="text-2xl font-serif font-bold text-primary">All Articles</h2>
+  <h2 class="text-2xl font-sans font-bold text-primary">All Articles</h2>
       <div class="flex items-center">
         <span class="text-gray-700 mr-3">Sort by:</span>
         <select class="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" id="sort-articles">
@@ -265,7 +265,7 @@ $categories = get_categories(array(
 <section class="py-16 bg-gray-50">
   <div class="container mx-auto px-4">
     <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 max-w-4xl mx-auto text-center">
-      <h3 class="text-2xl font-serif font-bold text-primary mb-4">Stay Updated with Legal Insights</h3>
+  <h3 class="text-2xl font-sans font-bold text-primary mb-4">Stay Updated with Legal Insights</h3>
       <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
         Subscribe to our newsletter and receive expert analysis, legal updates, and insights directly to your inbox.
       </p>

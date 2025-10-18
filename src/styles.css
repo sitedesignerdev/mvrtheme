@@ -3,9 +3,17 @@ a.mobile-menu-link:visited {
   color: #ffffff !important;
 }
 /* Ensure Montserrat is applied globally */
-/* body {
-  font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
-} */
+@layer base {
+  /* Apply the theme's sans (Montserrat) site-wide so font-sans classes reflect the global font */
+  body {
+    font-family: theme('fontFamily.sans');
+  }
+
+  /* Prefer Montserrat for headings too unless explicitly overridden */
+  h1,h2,h3,h4,h5,h6 {
+    font-family: theme('fontFamily.sans');
+  }
+}
 a.bg-accent.text-primary:visited {
   color: #00558D !important;
 }

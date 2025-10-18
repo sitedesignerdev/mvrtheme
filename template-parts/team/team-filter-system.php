@@ -14,16 +14,26 @@
                     <label for="practice-area" class="block text-sm font-medium text-gray-700 mb-2">Practice Area</label>
                     <select id="practice-area" class="team-filter w-full rounded-md border border-gray-300 bg-white py-3 px-4 shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
                         <option value="all">All Practice Areas</option>
-                        <option value="corporate">Corporate Commercial</option>
-                        <option value="banking">Banking and Finance</option>
-                        <option value="dispute">Dispute Resolution</option>
-                        <option value="energy">Energy Practice</option>
-                        <option value="competition">Competition Law</option>
-                        <option value="public">Public Regulatory</option>
-                        <option value="labour">Labour and Employment</option>
+                        <?php
+                        // Get all practice areas that have team members
+                        $practice_areas = get_terms(array(
+                            'taxonomy' => 'practice_area',
+                            'hide_empty' => true, // Only show categories with team members
+                            'orderby' => 'name',
+                            'order' => 'ASC'
+                        ));
+                        
+                        if (!empty($practice_areas) && !is_wp_error($practice_areas)) {
+                            foreach ($practice_areas as $area) {
+                                $selected = (isset($_GET['practice']) && $_GET['practice'] === $area->slug) ? 'selected' : '';
+                                echo '<option value="' . esc_attr($area->slug) . '" ' . $selected . '>' . 
+                                    esc_html($area->name) . ' (' . $area->count . ')' . 
+                                    '</option>';
+                            }
+                        }
+                        ?>
                     </select>
                 </div>
-                
                 <!-- Office Location Filter -->
                 <div>
                     <label for="office-location" class="block text-sm font-medium text-gray-700 mb-2">Office Location</label>
@@ -33,21 +43,19 @@
                         <option value="claremont">Claremont, Cape Town</option>
                     </select>
                 </div>
-                
+
                 <!-- Search by Name -->
                 <div>
                     <label for="search-name" class="block text-sm font-medium text-gray-700 mb-2">Search by Name</label>
                     <div class="relative">
                         <input type="text" id="search-name" placeholder="Enter attorney name" class="w-full rounded-md border border-gray-300 bg-white py-3 px-4 shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
                         <div class="absolute inset-y-0 right-0 flex items-center pr-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 极 11-14 0 7 7 0 0114 0z" />
-                            </svg>
+                            <!-- optional icon -->
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Active Filters Display -->
             <div id="active-filters" class="flex flex-wrap gap-2 mt-4 hidden">
                 <span class="text-sm text-gray-600 mr-2">Active filters:</span>
@@ -55,9 +63,10 @@
             </div>
         </div>
 
-        <!-- Filter Results Count -->
+        
+        
         <div class="flex justify-between items-center mb-6">
-            <p id="results-count" class="text-gray-600">Showing <span class="font-semibold">15</span> attorneys</p>
+            <p id="results-count" class="text-gray-600">Showing <span class="font-semibold">0</span> attorneys</p>
             <div class="flex items-center">
                 <span class="text-sm text-gray-600 mr-2">Sort by:</span>
                 <select id="sort-by" class="text-sm rounded-md border border-gray-300 bg-white py-1 px-2 shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
@@ -70,235 +79,87 @@
 
         <!-- Team Grid will be loaded here -->
         <div id="team-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-           <div class="team-member bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-practice="corporate" data-office="sandton" data-seniority="partner">
-                <div class="relative">
-                    <div class="h-100 overflow-hidden">
-                        <img 
-                            src="<?php echo get_template_directory_uri(); ?>/src/images/Matodzi.png" 
-                            alt="Matodzi Ratshimbilani" 
-                            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                        >
-                    </div>
-                    <!-- <div class="absolute top-4 right-4">
-                        <span class="bg-accent text-primary px-3 py-1 rounded-full text-sm font-semibold">Partner</span>
-                    </div> -->
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary mb-1">Matodzi Ratshimbilani</h3>
-                    <p class="text-accent font-semibold mb-2">Managing Director</p>
-                    <p class="text-gray-600 text-sm mb-4">Sandton Office</p>
-                    <p class="text-gray-600 mb-6 line-clamp-3">Matodzi Ratshimbilani focuses on Corporate Commercial Law including Mergers and Acquisitions, Corporate Governance, Commercial Contracts and Company Law.</p>
-                    
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-3">
-                            <a href="mailto:james@mvrattorneys.co.za" class="text-primary hover:text-accent transition-colors duration-300" title="Email James">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </a>
-                            <a href="#" class="text-primary hover:text-accent transition-colors duration-300" title="LinkedIn">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                </svg>
-                            </a>
-                        </div>
-                        <a href="/team/james-mitchell" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
-                            View Profile
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <?php
+                    // Query published team_member posts
+                    $args = array(
+                        'post_type' => 'team_member',
+                        'posts_per_page' => -1,
+                        'post_status' => 'publish',
+                        'orderby' => array('menu_order' => 'ASC', 'title' => 'ASC'),
+                        // Add taxonomy query if filter is set
+                        'tax_query' => array(),
+                    );
 
-            <!-- Team Member 2 -->
-            <div class="team-member bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-practice="banking" data-office="sandton" data-seniority="partner">
-                <div class="relative">
-                    <div class="h-100  overflow-hidden">
-                        <img 
-                            src="<?php echo get_template_directory_uri(); ?>/src/images/Eduan.png" 
-                            alt="Sarah Johnson" 
-                            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                        >
-                    </div>
-                    <!-- <div class="absolute top-4 right-4">
-                        <span class="bg-accent text-primary px-3 py-1 rounded-full text-sm font-semibold">Partner</span>
-                    </div> -->
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary mb-1">Eduan Kapp</h3>
-                    <p class="text-accent font-semibold mb-2">Executive – Banking & Finance</p>
-                    <p class="text-gray-600 text-sm mb-4">Sandton Office</p>
-                    <p class="text-gray-600 mb-6 line-clamp-3">Eduan is a seasoned lawyer and ex-investment banker with extensive transactional experience throughout Sub-Sahara Africa and other emerging markets.</p>
-                    
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-3">
-                            <a href="mailto:sarah@mvrattorneys.co.za" class="text-primary hover:text-accent transition-colors duration-300" title="Email Sarah">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </a>
-                            <a href="#" class="text-primary hover:text-accent transition-colors duration-300" title="LinkedIn">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                </svg>
-                            </a>
-                        </div>
-                        <a href="/team/sarah-johnson" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
-                            View Profile
-                        </a>
-                    </div>
-                </div>
-            </div>
+                    // If practice area filter is set via URL
+                    if (isset($_GET['practice']) && $_GET['practice'] !== 'all') {
+                        $args['tax_query'][] = array(
+                            'taxonomy' => 'practice_area',
+                            'field' => 'slug',
+                            'terms' => sanitize_text_field($_GET['practice'])
+                        );
+                    }
 
-            <!-- Team Member 3 -->
-            <div class="team-member bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-practice="dispute" data-office="claremont" data-seniority="partner">
-                <div class="relative">
-                    <div class="h-100  overflow-hidden">
-                        <img 
-                            src="<?php echo get_template_directory_uri(); ?>/src/images/Robyn.png" 
-                            alt="Robert Williams" 
-                            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                        >
-                    </div>
-                    <!-- <div class="absolute top-4 right-4">
-                        <span class="bg-accent text-primary px-3 py-1 rounded-full text-sm font-semibold">Partner</span>
-                    </div> -->
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary mb-1">Robert Williams</h3>
-                    <p class="text-accent font-semibold mb-2">Executive – Dispute Resolution</p>
-                    <p class="text-gray-600 text-sm mb-4">Claremont Office</p>
-                    <p class="text-gray-600 mb-6 line-clamp-3">Robyn Adams is a results-orientated with a proven knowledge of, inter alia, alternative dispute resolution, complex civil litigation, and trial law in various fields including construction law, commercial law, and property law.</p>
-                    
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-3">
-                            <a href="mailto:robert@mvrattorneys.co.za" class="text-primary hover:text-accent transition-colors duration-300" title="Email Robert">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </a>
-                            <a href="#" class="text-primary hover:text-accent transition-colors duration-300" title="LinkedIn">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                </svg>
-                            </a>
+                    $team_query = new WP_Query($args);
+                    if ($team_query->have_posts()):
+                        while ($team_query->have_posts()): $team_query->the_post();
+                            // Prepare member variables used in the template
+                            $thumb = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                            $member_title = function_exists('get_field') ? get_field('title') : '';
+                            $member_office = function_exists('get_field') ? get_field('office_location') : '';
+                            $member_seniority = function_exists('get_field') ? get_field('seniority') : '';
+                            $member_excerpt = get_the_excerpt();
+                            $member_practice = '';
+                            $terms = get_the_terms(get_the_ID(), 'practice_area');
+                            if (!empty($terms) && !is_wp_error($terms)) {
+                                // Use first term slug for data attribute (adjust if multiple needed)
+                                $member_practice = $terms[0]->slug;
+                            }
+                            $member_link = get_permalink();
+                ?>
+                <div class="team-member bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" 
+                    data-practice="<?php 
+                        // Get all practice area slugs for this member
+                        $practice_areas = wp_get_post_terms(get_the_ID(), 'practice_area', array('fields' => 'slugs'));
+                        echo esc_attr(implode(' ', $practice_areas));
+                    ?>" 
+                    data-office="<?php echo esc_attr($member_office); ?>" 
+                    data-seniority="<?php echo esc_attr($member_seniority); ?>">
+                    <div class="relative">
+                        <div class="h-80 overflow-hidden">
+                            <?php if ($thumb): ?>
+                                <img src="<?php echo esc_url($thumb); ?>" alt="<?php the_title_attribute(); ?>" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+                            <?php else: ?>
+                                <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500">No image</div>
+                            <?php endif; ?>
                         </div>
-                        <a href="/team/robert-williams" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
-                            View Profile
-                        </a>
                     </div>
-                </div>
-            </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-1"><?php the_title(); ?></h3>
+                        <?php if ($member_title): ?><p class="text-accent font-semibold mb-2"><?php echo esc_html($member_title); ?></p><?php endif; ?>
+                        <?php if ($member_office): ?><p class="text-gray-600 text-sm mb-4"><?php echo esc_html($member_office); ?> Office</p><?php endif; ?>
+                        <p class="text-gray-600 mb-6 line-clamp-3"><?php echo esc_html($member_excerpt); ?></p>
 
-            <!-- Team Member 4 -->
-            <div class="team-member bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-practice="energy" data-office="sandton" data-seniority="associate">
-                <div class="relative">
-                    <div class="h-100  overflow-hidden">
-                        <img 
-                            src="<?php echo get_template_directory_uri(); ?>/src/images/Maphanga.png" 
-                            alt="Michael Chen" 
-                            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                        >
-                    </div>
-                    <!-- <div class="absolute top-4 right-4">
-                        <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-semibold">Associate</span>
-                    </div> -->
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary mb-1">Maphanga Maseko</h3>
-                    <p class="text-accent font-semibold mb-2">Competition Law</p>
-                    <p class="text-gray-600 text-sm mb-4">Sandton Office</p>
-                    <p class="text-gray-600 mb-6 line-clamp-3">Maphanga is a results-driven professional and has proven knowledge of, inter alia, competition law, commercial law, mergers and acquisition law, in various fields including telecommunications, National Credit Regulator, corporate governance and energy.</p>
-                    
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-3">
-                            <a href="mailto:michael@mvrattorneys.co.za" class="text-primary hover:text-accent transition-colors duration-300" title="Email Michael">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </a>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-3">
+                                <?php $member_linkedin = function_exists('get_field') ? get_field('linkedin') : ''; if ($member_linkedin): ?>
+                                    <a href="<?php echo esc_url($member_linkedin); ?>" target="_blank" class="text-gray-500 hover:text-primary transition duration-200">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    </a>
+                                <?php endif; ?>
+                            </div>
+                            <a href="<?php echo esc_url($member_link); ?>" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">View Profile</a>
                         </div>
-                        <a href="/team/michael-chen" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
-                            View Profile
-                        </a>
                     </div>
                 </div>
-            </div>
-
-            <!-- Team Member 5 -->
-            <div class="team-member bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-practice="competition" data-office="claremont" data-seniority="counsel">
-                <div class="relative">
-                    <div class="h-100  overflow-hidden">
-                        <img 
-                            src="<?php echo get_template_directory_uri(); ?>/src/images/Mashudu.png" 
-                            alt="Priya Patel" 
-                            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                        >
-                    </div>
-                    <!-- <div class="absolute top-4 right-4">
-                        <span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-sm font-semibold">Senior Counsel</span>
-                    </div> -->
+            <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    else:
+            ?>
+                <div class="col-span-1">
+                    <p class="text-gray-600">No team members found. Add some <code>team_member</code> posts in the admin.</p>
                 </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary mb-1">Mashudu Mundalamo</h3>
-                    <p class="text-accent font-semibold mb-2">Competition Law</p>
-                    <p class="text-gray-600 text-sm mb-4">Claremont Office</p>
-                    <p class="text-gray-600 mb-6 line-clamp-3">Expert in antitrust matters, merger control, and competition compliance with extensive experience in regulatory investigations.</p>
-                    
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-3">
-                            <a href="mailto:priya@mvrattorneys.co.za" class="text-primary hover:text-accent transition-colors duration-300" title="Email Priya">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </a>
-                            <a href="#" class="text-primary hover:text-accent transition-colors duration-300" title="LinkedIn">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                </svg>
-                            </a>
-                        </div>
-                        <a href="/team/priya-patel" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
-                            View Profile
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-             <!-- Team Member 6 -->
-            <div class="team-member bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-practice="labour" data-office="sandton" data-seniority="partner">
-                <div class="relative">
-                    <div class="h-100  overflow-hidden">
-                        <img 
-                            src="<?php echo get_template_directory_uri(); ?>/src/images/tana.png" 
-                            alt="David Brown" 
-                            class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                        >
-                    </div>
-                    <!-- <div class="absolute top-4 right-4">
-                        <span class="bg-accent text-primary px-3 py-1 rounded-full text-sm font-semibold">Partner</span>
-                    </div> -->
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-primary mb-1">Mashudu Mundalamo</h3>
-                    <p class="text-accent font-semibold mb-2">Labour & Employment Law</p>
-                    <p class="text-gray-600 text-sm mb-4">Sandton Office</p>
-                    <p class="text-gray-600 mb-6 line-clamp-3">Mashudu is an accomplished Human Resource (HR) Manager and Employee Relations (ER) Manager with 19 years’ worth of experience in South Africa’s leading companies and organisations. Mashudu is a focused, problem-solver, mediator, professional and dedicated leader who is dedicated to harmonising
-                   employee relations and promoting social justice.</p>
-                    
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-3">
-                            <a href="mailto:david@mvrattorneys.co.za" class="text-primary hover:text-accent transition-colors duration-300" title="Email David">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </a>
-                        </div>
-                        <a href="/team/david-brown" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
-                            View Profile
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <?php endif; ?>
         </div>
 
         <!-- Loading State -->
@@ -371,43 +232,50 @@ document.addEventListener('DOMContentLoaded', function() {
     resetButton.addEventListener('click', resetFilters);
     
     function applyFilters() {
-        // Show loading state
-        loadingIndicator.classList.remove('hidden');
-        teamGrid.classList.add('hidden');
-        noResults.classList.add('hidden');
+    // Show loading state
+    loadingIndicator.classList.remove('hidden');
+    teamGrid.classList.add('hidden');
+    noResults.classList.add('hidden');
 
-        setTimeout(() => {
-            updateActiveFilters();
-            // Actual filtering logic
-            const members = teamGrid.querySelectorAll('.team-member');
-            let visibleCount = 0;
-            members.forEach(member => {
-                const practice = member.getAttribute('data-practice');
-                const office = member.getAttribute('data-office');
-                const name = member.querySelector('h3')?.textContent?.toLowerCase() || '';
+    setTimeout(() => {
+        updateActiveFilters();
+        // Actual filtering logic
+        const members = teamGrid.querySelectorAll('.team-member');
+        let visibleCount = 0;
+        
+        members.forEach(member => {
+            const practiceAreas = member.getAttribute('data-practice').split(' ');
+            const office = member.getAttribute('data-office');
+            const name = member.querySelector('h3')?.textContent?.toLowerCase() || '';
 
-                let show = true;
-                if (filters.practice !== 'all' && practice !== filters.practice) {
-                    show = false;
-                }
-                if (filters.office !== 'all' && office !== filters.office) {
-                    show = false;
-                }
-                if (filters.search && !name.includes(filters.search)) {
-                    show = false;
-                }
+            let show = true;
+            
+            // Practice area filter (supports multiple areas per member)
+            if (filters.practice !== 'all' && !practiceAreas.includes(filters.practice)) {
+                show = false;
+            }
+            
+            // Office filter
+            if (filters.office !== 'all' && office !== filters.office) {
+                show = false;
+            }
+            
+            // Search filter
+            if (filters.search && !name.includes(filters.search)) {
+                show = false;
+            }
 
-                member.style.display = show ? '' : 'none';
-                if (show) visibleCount++;
-            });
+            member.style.display = show ? '' : 'none';
+            if (show) visibleCount++;
+        });
 
-            loadingIndicator.classList.add('hidden');
-            if (visibleCount === 0) {
-                noResults.classList.remove('hidden');
-                resultsCount.innerHTML = 'Showing <span class="font-semibold">0</span> attorneys';
-            } else {
-                teamGrid.classList.remove('hidden');
-                resultsCount.innerHTML = `Showing <span class="font-semibold">${visibleCount}</span> attorney${visibleCount > 1 ? 's' : ''}`;
+        loadingIndicator.classList.add('hidden');
+        if (visibleCount === 0) {
+            noResults.classList.remove('hidden');
+            resultsCount.innerHTML = 'Showing <span class="font-semibold">0</span> attorneys';
+        } else {
+            teamGrid.classList.remove('hidden');
+            resultsCount.innerHTML = `Showing <span class="font-semibold">${visibleCount}</span> attorney${visibleCount > 1 ? 's' : ''}`;
             }
         }, 200);
     }

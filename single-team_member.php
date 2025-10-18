@@ -9,13 +9,13 @@ while (have_posts()) : the_post();
     $phone = get_field('phone');
     $linkedin = get_field('linkedin');
     $education = get_field('education');
-    $specializations = get_field('specializations');
+    $practice_areas = get_field('practice_areas');
     $bio = get_field('bio');
     $office = get_field('office'); // New field for office location
     $languages = get_field('languages'); // New field for languages
     $bar_admissions = get_field('bar_admissions'); // New field
     $professional_memberships = get_field('professional_memberships'); // New field
-    $experience = get_field('experience'); // New field
+    $recent_clients= get_field('recent_clients'); // New field
     $notable_achievements = get_field('notable_achievements'); // New field
 ?>
 
@@ -136,46 +136,80 @@ while (have_posts()) : the_post();
                         </div>
                     <?php endif; ?>
 
-                    <!-- Areas of Expertise -->
-                    <?php if ($specializations): ?>
-                        <div>
-                            <h2 class="text-2xl font-serif font-bold text-primary mb-4">Areas of Expertise</h2>
-                            <div class="prose max-w-none">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <?php 
-                                    // Handle both array and string formats
-                                    if (is_array($specializations)):
-                                        $half = ceil(count($specializations) / 2);
-                                        $first_half = array_slice($specializations, 0, $half);
-                                        $second_half = array_slice($specializations, $half);
-                                    ?>
-                                        <div class="space-y-2">
-                                            <?php foreach ($first_half as $specialization): ?>
-                                                <div class="flex items-center">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <!-- Practice Areas -->
+                <?php if ($practice_areas): ?>
+                    <div>
+                        <h2 class="text-2xl font-serif font-bold text-primary mb-4">Practice Areas</h2>
+                        <div class="prose max-w-none">
+                            <?php 
+                            // Parse WYSIWYG content to extract list items
+                            $list_items = array();
+                            
+                            // Check if content contains unordered list
+                            if (strpos($practice_areas, '<ul>') !== false || strpos($practice_areas, '<li>') !== false) {
+                                // Use DOMDocument to parse HTML and extract list items
+                                $dom = new DOMDocument();
+                                @$dom->loadHTML(mb_convert_encoding($practice_areas, 'HTML-ENTITIES', 'UTF-8'));
+                                
+                                $lists = $dom->getElementsByTagName('ul');
+                                foreach ($lists as $list) {
+                                    $items = $list->getElementsByTagName('li');
+                                    foreach ($items as $item) {
+                                        $text = trim($item->textContent);
+                                        if (!empty($text)) {
+                                            $list_items[] = $text;
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            // If we found list items, display in columns
+                            if (!empty($list_items)):
+                                $item_count = count($list_items);
+                                
+                                // Smart column calculation
+                                $get_columns = function($count) {
+                                    if ($count >= 20) return 4;
+                                    if ($count >= 12) return 3;
+                                    if ($count >= 6) return 2;
+                                    return 1;
+                                };
+                                
+                                $columns = $get_columns($item_count);
+                                $items_per_column = ceil($item_count / $columns);
+                                $column_lists = array_chunk($list_items, $items_per_column);
+                                
+                                // Responsive grid classes
+                                $grid_config = [
+                                    1 => 'grid-cols-1 max-w-2xl',
+                                    2 => 'grid-cols-1 md:grid-cols-2',
+                                    3 => 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+                                    4 => 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+                                ];
+                            ?>
+                                <div class="grid <?php echo $grid_config[$columns]; ?> gap-6 md:gap-8">
+                                    <?php foreach ($column_lists as $column_items): ?>
+                                        <div class="space-y-3">
+                                            <?php foreach ($column_items as $item): ?>
+                                                <div class="flex items-start group">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-3 mt-0.5 flex-shrink-0 transition-transform group-hover:scale-110" viewBox="0 0 20 20" fill="currentColor">
                                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                                                     </svg>
-                                                    <span><?php echo esc_html($specialization); ?></span>
+                                                    <span class="text-gray-700 group-hover:text-primary transition-colors duration-200"><?php echo esc_html($item); ?></span>
                                                 </div>
                                             <?php endforeach; ?>
                                         </div>
-                                        <div class="space-y-2">
-                                            <?php foreach ($second_half as $specialization): ?>
-                                                <div class="flex items-center">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                                    </svg>
-                                                    <span><?php echo esc_html($specialization); ?></span>
-                                                </div>
-                                            <?php endforeach; ?>
-                                        </div>
-                                    <?php else: ?>
-                                        <?php echo wpautop($specializations); ?>
-                                    <?php endif; ?>
+                                    <?php endforeach; ?>
                                 </div>
-                            </div>
+                            <?php else: ?>
+                                <!-- Fallback: display the WYSIWYG content as-is -->
+                                <div class="max-w-4xl">
+                                    <?php echo apply_filters('the_content', $practice_areas); ?>
+                                </div>
+                            <?php endif; ?>
                         </div>
-                    <?php endif; ?>
+                    </div>
+                <?php endif; ?>
 
                     <!-- Bar Admissions -->
                     <?php if ($bar_admissions): ?>
@@ -197,12 +231,70 @@ while (have_posts()) : the_post();
                         </div>
                     <?php endif; ?>
 
-                    <!-- Experience -->
-                    <?php if ($experience): ?>
+                    <!-- Recent Clients -->
+                    <?php if ($recent_clients): ?>
                         <div>
-                            <h2 class="text-2xl font-serif font-bold text-primary mb-4">Experience</h2>
+                            <h2 class="text-2xl font-serif font-bold text-primary mb-4">Recent Clients</h2>
                             <div class="prose max-w-none">
-                                <?php echo wpautop($experience); ?>
+                                <?php
+                                // Try to parse Recent Clients the same way as Practice Areas (support UL/LI and split into columns)
+                                $recent_items = array();
+
+                                if (strpos($recent_clients, '<ul>') !== false || strpos($recent_clients, '<li>') !== false) {
+                                    $dom_rc = new DOMDocument();
+                                    @$dom_rc->loadHTML(mb_convert_encoding($recent_clients, 'HTML-ENTITIES', 'UTF-8'));
+                                    $uls = $dom_rc->getElementsByTagName('ul');
+                                    foreach ($uls as $ul) {
+                                        $lis = $ul->getElementsByTagName('li');
+                                        foreach ($lis as $li) {
+                                            $text = trim($li->textContent);
+                                            if (!empty($text)) {
+                                                $recent_items[] = $text;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                if (!empty($recent_items)):
+                                    $rc_count = count($recent_items);
+
+                                    $get_columns_rc = function($count) {
+                                        if ($count >= 20) return 4;
+                                        if ($count >= 12) return 3;
+                                        if ($count >= 6) return 2;
+                                        return 1;
+                                    };
+
+                                    $rc_columns = $get_columns_rc($rc_count);
+                                    $rc_per_col = ceil($rc_count / $rc_columns);
+                                    $rc_column_lists = array_chunk($recent_items, $rc_per_col);
+
+                                    $grid_config_rc = [
+                                        1 => 'grid-cols-1 max-w-2xl',
+                                        2 => 'grid-cols-1 md:grid-cols-2',
+                                        3 => 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+                                        4 => 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+                                    ];
+                                ?>
+                                    <div class="grid <?php echo $grid_config_rc[$rc_columns]; ?> gap-6 md:gap-8">
+                                        <?php foreach ($rc_column_lists as $col_items): ?>
+                                            <div class="space-y-3">
+                                                <?php foreach ($col_items as $citem): ?>
+                                                    <div class="flex items-start group">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-3 mt-0.5 flex-shrink-0 transition-transform group-hover:scale-110" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                                        </svg>
+                                                        <span class="text-gray-700 group-hover:text-primary transition-colors duration-200"><?php echo esc_html($citem); ?></span>
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php else: ?>
+                                    <div class="max-w-4xl">
+                                        <?php echo apply_filters('the_content', $recent_clients); ?>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     <?php endif; ?>
