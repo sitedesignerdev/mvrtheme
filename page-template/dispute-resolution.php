@@ -62,7 +62,7 @@
                     <div class="flex items-start gap-4">
                         <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-accent">
                             <img 
-                                src="<?php echo get_template_directory_uri(); ?>/src/images/Matodzi.png" 
+                                src="<?php echo get_template_directory_uri(); ?>/src/images/Team-Banner.jpg" 
                                 alt="Matodzi Ratshimbilani"
                                 class="w-full h-full object-cover"
                                 onerror="this.src='<?php echo get_template_directory_uri(); ?>/src/images/team/placeholder.jpg'"

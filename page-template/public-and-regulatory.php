@@ -15,7 +15,7 @@
     <div class="absolute inset-0 z-0">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <img 
-            src="<?php echo get_template_directory_uri(); ?>/src/images/Matodzi.png" 
+            src="<?php echo get_template_directory_uri(); ?>/src/images/Team-Banner.jpg" 
             alt="Corporate Commercial Law" 
             class="w-full h-full object-cover"
         >

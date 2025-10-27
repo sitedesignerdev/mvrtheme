@@ -104,8 +104,8 @@
                         while ($team_query->have_posts()): $team_query->the_post();
                             // Prepare member variables used in the template
                             $thumb = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                            $member_title = function_exists('get_field') ? get_field('title') : '';
-                            $member_office = function_exists('get_field') ? get_field('office_location') : '';
+                            $position = get_field('position');
+                            $office = get_field('office');
                             $member_seniority = function_exists('get_field') ? get_field('seniority') : '';
                             $member_excerpt = get_the_excerpt();
                             $member_practice = '';
@@ -122,10 +122,10 @@
                         $practice_areas = wp_get_post_terms(get_the_ID(), 'practice_area', array('fields' => 'slugs'));
                         echo esc_attr(implode(' ', $practice_areas));
                     ?>" 
-                    data-office="<?php echo esc_attr($member_office); ?>" 
+                    data-office="<?php echo esc_attr($office); ?>" 
                     data-seniority="<?php echo esc_attr($member_seniority); ?>">
                     <div class="relative">
-                        <div class="h-80 overflow-hidden">
+                        <div class="h-90 overflow-hidden">
                             <?php if ($thumb): ?>
                                 <img src="<?php echo esc_url($thumb); ?>" alt="<?php the_title_attribute(); ?>" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
                             <?php else: ?>
@@ -135,14 +135,13 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-primary mb-1"><?php the_title(); ?></h3>
-                        <?php if ($member_title): ?><p class="text-accent font-semibold mb-2"><?php echo esc_html($member_title); ?></p><?php endif; ?>
-                        <?php if ($member_office): ?><p class="text-gray-600 text-sm mb-4"><?php echo esc_html($member_office); ?> Office</p><?php endif; ?>
+                        <?php if ($position): ?><p class="text-accent font-semibold mb-2"><?php echo esc_html($position); ?></p><?php endif; ?>
+                        <?php if ($office): ?><p class="text-gray-600 text-sm mb-4"><?php echo esc_html($office); ?> Office</p><?php endif; ?>
                         <p class="text-gray-600 mb-6 line-clamp-3"><?php echo esc_html($member_excerpt); ?></p>
-
                         <div class="flex justify-between items-center">
                             <div class="flex space-x-3">
-                                <?php $member_linkedin = function_exists('get_field') ? get_field('linkedin') : ''; if ($member_linkedin): ?>
-                                    <a href="<?php echo esc_url($member_linkedin); ?>" target="_blank" class="text-gray-500 hover:text-primary transition duration-200">
+                                <?php  $linkedin = function_exists('get_field') ? get_field('linkedin') : ''; if ( $linkedin): ?>
+                                    <a href="<?php echo esc_url( $linkedin); ?>" target="_blank" class="text-gray-500 hover:text-primary transition duration-200">
                                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                     </a>
                                 <?php endif; ?>
