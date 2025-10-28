@@ -7,10 +7,10 @@
 ?>
 <?php get_header(); ?>
 <section class="py-16 bg-gray-50">
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-12">
     <!-- Page Header -->
     <div class="text-center max-w-3xl mx-auto mb-12">
-      <h1 class="text-4xl font-serif font-bold text-primary mb-4">Contact MVR Attorneys</h1>
+  <h1 class="text-4xl font-sans font-bold text-primary mb-4">Contact MVR Attorneys</h1>
       <p class="text-xl text-gray-700">Get in touch with our legal experts for comprehensive corporate and commercial law solutions</p>
     </div>
 
@@ -108,7 +108,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
       <!-- Contact Form -->
       <div class="bg-white rounded-xl shadow-lg p-8">
-        <h2 class="text-2xl font-serif font-bold text-primary mb-6">Send Us a Message</h2>
+        <h2 class="text-2xl font-sans font-bold text-primary mb-6">Send Us a Message</h2>
         <form id="contact-form" class="space-y-6">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>

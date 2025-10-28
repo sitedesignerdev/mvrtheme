@@ -14,7 +14,7 @@
 	<!-- Footer -->
 <footer class="bg-primary text-white">
   <!-- Main Footer Content -->
-  <div class="container mx-auto px-4 py-12">
+  <div class="container mx-auto px-12 py-12">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       
       <!-- Brand Column -->
@@ -121,7 +121,7 @@
 
   <!-- Newsletter Subscription -->
   <div class="border-t border-white border-opacity-20">
-    <div class="container mx-auto px-4 py-8">
+  <div class="container mx-auto px-12 py-8">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
           <h3 class="text-lg font-semibold mb-2">Stay Updated</h3>
@@ -139,7 +139,7 @@
 
   <!-- Bottom Bar -->
   <div class="border-t border-white border-opacity-20">
-    <div class="container mx-auto px-4 py-6">
+  <div class="container mx-auto px-12 py-6">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="text-gray-300 text-sm mb-4 md:mb-0">
           <p>&copy; 2025 MVR Attorneys. All rights reserved.</p>

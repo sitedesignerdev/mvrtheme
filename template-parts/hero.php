@@ -1,5 +1,5 @@
 <!-- Hero Section -->
-<section class="relative min-h-[90vh] flex items-center justify-center py-16 px-4">
+<section class="relative min-h-[90vh] flex items-center justify-center py-16 px-12">
   <!-- Background with overlay -->
   <div class="absolute inset-0 z-0">
     <div class="absolute inset-0 bg-black opacity-50"></div>

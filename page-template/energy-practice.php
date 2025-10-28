@@ -21,7 +21,7 @@
         >
     </div>
     
-    <div class="relative container mx-auto px-4 z-10">
+    <div class="relative container mx-auto px-12 z-10">
         <div class="max-w-4xl mx-auto text-center">
             <div class="inline-flex items-center justify-center w-20 h-20 bg-accent rounded-full text-primary mb-6">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -38,7 +38,7 @@
 
 <!-- Service Overview & Team -->
 <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-12">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             
             <!-- Service Description -->
@@ -167,7 +167,7 @@
 
 <!-- Recent Clients Section -->
 <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-12">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-serif font-bold text-primary mb-4">Recent Clients</h2>
@@ -200,7 +200,7 @@
 
 <!-- CTA Section -->
 <section class="py-16 bg-primary text-white">
-    <div class="container mx-auto px-4 text-center">
+    <div class="container mx-auto px-12 text-center">
         <h2 class="text-3xl font-serif font-bold mb-6">Ready to Discuss Your Corporate Commercial Needs?</h2>
         <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
             Contact our Corporate Commercial team for expert legal guidance on your business matters.

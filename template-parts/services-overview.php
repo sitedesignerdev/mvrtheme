@@ -1,5 +1,5 @@
 <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-12">
         <!-- Section Header - Now matches "Trusted By Industry Leaders" -->
         <div class="text-center max-w-3xl mx-auto mb-12">
             <h2 class="text-3xl font-bold text-primary mb-4">Our Legal Services</h2>

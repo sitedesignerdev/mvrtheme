@@ -9,7 +9,7 @@
 
  <!-- Profile Header -->
     <section class="bg-primary text-white py-8">
-        <div class="container mx-auto px-4">
+    <div class="container mx-auto px-12">
             <a href="/team" class="inline-flex items-center text-white hover:text-accent transition duration-300 mb-6">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
@@ -21,7 +21,7 @@
 
     <!-- Main Profile Content -->
     <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
+    <div class="container mx-auto px-12">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
                 <!-- Sidebar -->
                 <div class="lg:col-span-1">
@@ -236,7 +236,7 @@
 
     <!-- CTA Section -->
     <section class="py-16 bg-primary text-white">
-        <div class="container mx-auto px-4 text-center">
+    <div class="container mx-auto px-12 text-center">
             <h2 class="text-3xl font-serif font-bold mb-6">Schedule a Consultation</h2>
             <p class="text-xl max-w-2xl mx-auto mb-8">
                 Contact Matodzi Ratshimbilani for expert legal advice on corporate and commercial matters.

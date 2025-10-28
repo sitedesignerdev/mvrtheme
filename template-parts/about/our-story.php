@@ -1,5 +1,5 @@
 <section id="our-story" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-12">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <!-- Content Column -->
             <div>

@@ -1,5 +1,5 @@
 <section class="py-12 bg-white">
-    <div class="container mx-auto px-4 font-sans">
+    <div class="container mx-auto px-12 font-sans">
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-10">
             <h2 class="text-3xl font-bold text-primary mb-4">Find the Right Legal Expert</h2>
@@ -108,6 +108,8 @@
                             $office = get_field('office');
                             $member_seniority = function_exists('get_field') ? get_field('seniority') : '';
                             $excerpt = get_the_excerpt();
+                            // Ensure excerpts are trimmed to 20 words for consistent display
+                            $excerpt = wp_trim_words( $excerpt, 20, '...' );
                             $member_practice = '';
                             $terms = get_the_terms(get_the_ID(), 'practice_area');
                             if (!empty($terms) && !is_wp_error($terms)) {

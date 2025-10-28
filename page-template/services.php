@@ -11,7 +11,7 @@
 <!-- Services Page Hero -->
 <section class="relative py-20 bg-primary">
   <div class="absolute inset-0 bg-black opacity-50"></div>
-  <div class="relative container mx-auto px-4 text-center text-white">
+  <div class="relative container mx-auto px-12 text-center text-white">
   <h1 class="text-4xl md:text-5xl font-sans font-bold mb-6">Our Legal Services</h1>
     <p class="text-xl max-w-3xl mx-auto mb-8">
       Comprehensive corporate and commercial legal solutions tailored to your business needs
@@ -27,7 +27,7 @@
 
 <!-- Services Overview -->
 <section class="py-16 bg-white">
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-12">
     <div class="text-center max-w-3xl mx-auto mb-12">
   <h2 class="text-3xl font-sans font-bold text-primary mb-4">Expert Legal Counsel</h2>
       <p class="text-gray-700 text-lg">
@@ -278,7 +278,7 @@
 
 <!-- CTA Section -->
 <section class="py-16 bg-primary text-white">
-  <div class="container mx-auto px-4 text-center">
+  <div class="container mx-auto px-12 text-center">
     <h2 class="text-3xl font-serif font-bold mb-6">Ready to Discuss Your Legal Needs?</h2>
     <p class="text-xl max-w-2xl mx-auto mb-8">
       Contact us today for a confidential consultation to discuss how we can support your business.

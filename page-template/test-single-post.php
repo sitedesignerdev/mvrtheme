@@ -18,7 +18,7 @@ get_header();
   </div>
 
   <!-- Content -->
-  <div class="relative container mx-auto px-4 z-10">
+  <div class="relative container mx-auto px-12 z-10">
     <div class="max-w-4xl mx-auto text-center text-white">
       
       <!-- Category Badge -->
@@ -92,7 +92,7 @@ get_header();
 
 <!-- Article Content Section -->
 <section class="py-16 bg-white">
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-12">
     <div class="max-w-4xl mx-auto">
       
       <!-- Article Content -->

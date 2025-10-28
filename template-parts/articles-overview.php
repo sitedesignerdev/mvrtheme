@@ -1,6 +1,6 @@
 <!-- Latest Articles Section -->
 <section class="py-16 bg-gray-50">
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-12">
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-12">
       <h2 class="text-3xl font-serif font-bold text-primary mb-4">Latest Insights & Articles</h2>
@@ -90,13 +90,15 @@
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
           </h3>
           <p class="text-gray-700 mb-4">
-            <?php 
-            $excerpt = get_the_excerpt();
-            if (empty($excerpt)) {
-                $excerpt = wp_trim_words(get_the_content(), 20);
-            }
-            echo esc_html($excerpt);
-            ?>
+      <?php 
+      $excerpt = get_the_excerpt();
+      if (empty($excerpt)) {
+        $excerpt = wp_trim_words(get_the_content(), 20, '...');
+      } else {
+        $excerpt = wp_trim_words($excerpt, 20, '...');
+      }
+      echo esc_html($excerpt);
+      ?>
           </p>
           <div class="flex items-center justify-between">
             <a href="<?php the_permalink(); ?>" class="text-accent font-semibold hover:text-yellow-600 transition duration-300 inline-flex items-center">
@@ -139,13 +141,15 @@
               </a>
             </h3>
             <p class="text-gray-700 mb-6">
-              <?php 
-              $excerpt = get_the_excerpt();
-              if (empty($excerpt)) {
-                  $excerpt = wp_trim_words(get_the_content(), 30);
-              }
-              echo esc_html($excerpt);
-              ?>
+        <?php 
+        $excerpt = get_the_excerpt();
+        if (empty($excerpt)) {
+          $excerpt = wp_trim_words(get_the_content(), 20, '...');
+        } else {
+          $excerpt = wp_trim_words($excerpt, 20, '...');
+        }
+        echo esc_html($excerpt);
+        ?>
             </p>
             <div class="flex items-center text-sm text-gray-500 mb-6">
               <span>By <?php echo esc_html($author_name); ?></span>

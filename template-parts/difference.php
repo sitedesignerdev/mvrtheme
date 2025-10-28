@@ -1,5 +1,5 @@
 <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-12">
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-16">
             <h2 class="text-3xl font-bold text-primary mb-4">Why Choose MVR Attorneys</h2>

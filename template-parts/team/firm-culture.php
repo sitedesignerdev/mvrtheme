@@ -1,6 +1,6 @@
 <!-- Firm Culture Section -->
 <section class="py-20 bg-white">
-  <div class="container mx-auto px-4">
+  <div class="container mx-auto px-12">
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
       <h2 class="text-4xl font-serif font-bold text-primary mb-4">Our Firm Culture</h2>

@@ -14,7 +14,7 @@ get_header();
   <!-- Hero Section -->
   <section class="relative py-20 bg-primary">
     <div class="absolute inset-0 bg-black opacity-50"></div>
-    <div class="relative container mx-auto px-4 text-center text-white">
+  <div class="relative container mx-auto px-12 text-center text-white">
       <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4">
         <?php
         if (is_tag()) {
@@ -44,7 +44,7 @@ get_header();
 
   <!-- Articles Grid -->
   <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
+  <div class="container mx-auto px-12">
       <?php if (have_posts()) : ?>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <?php while (have_posts()) : the_post(); ?>

@@ -10,7 +10,7 @@
     </div>
 
     <!-- Content -->
-    <div class="container mx-auto px-4 relative z-10">
+    <div class="container mx-auto px-12 relative z-10">
         <div class="max-w-3xl mx-auto text-center text-white font-sans">
             <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Legal Team</h1>
             <p class="text-xl md:text-2xl mb-8 leading-relaxed">

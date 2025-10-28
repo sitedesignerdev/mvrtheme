@@ -1,5 +1,5 @@
 <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4 ">
+    <div class="container mx-auto px-12 ">
         <!-- Practice Filter Dropdown -->
         <div class="mb-8 flex justify-end">
             <label for="practice-filter" class="mr-2 font-sans font-semibold text-primary">Filter by Practice:</label>

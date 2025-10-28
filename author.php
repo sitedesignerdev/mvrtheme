@@ -9,7 +9,7 @@ get_header();
   <!-- Hero Section -->
   <section class="relative py-20 bg-primary">
     <div class="absolute inset-0 bg-black opacity-50"></div>
-    <div class="relative container mx-auto px-4 text-center text-white">
+  <div class="relative container mx-auto px-12 text-center text-white">
       <div class="max-w-2xl mx-auto">
         <!-- Author Avatar -->
         <div class="w-24 h-24 bg-white rounded-full overflow-hidden mx-auto mb-6">
