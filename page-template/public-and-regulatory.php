@@ -46,10 +46,16 @@
                 <h2 class="text-3xl font-serif font-bold text-primary mb-8">Department Overview</h2>
                 <div class="prose prose-lg max-w-none">
                     <p class="text-gray-700 mb-6">
-                        The Corporate Commercial Department is led by <strong>Matodzi Ratshimbilani</strong> who commands more than twenty-five (25) years of corporate commercial experience.
+                        The Public and Regulatory Law practice is led by <strong>Matdozi Ratshimbilani</strong> assisted by <strong>Tiyiselani Sono</strong>, as a consultant.
                     </p>
                     <p class="text-gray-700 mb-6">
-                        Matodzi has extensive experience in corporate and commercial law, having spent all of his career with some of the top five South African law firms as a junior lawyer and equity director.
+                        Matodzi seamlessly extends a wealth of expertise to the Public Law and Regulatory Team, and together with Tiyiselani Sono, advises both State-Owned Entities, Government Departments and Corporations.
+                    </p>
+                    <p>
+                       In this practice area Tiyiselani has more than 6 years of post-admission experience in Public and Regulatory Law, including drafting complex opinions, applying legislative interpretation, and advising on public procurement and administrative judicial proceedings. Tiyiselani further has experience in legislative drafting. 
+                    </p>
+                    <p>
+                        Tana Patsa supports the Public and Regulatory law department in conducting legal research and drafting complex advisory opinions.
                     </p>
                 </div>
 
@@ -76,16 +82,16 @@
                     <div class="flex items-start gap-4">
                         <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-accent">
                             <img 
-                                src="<?php echo get_template_directory_uri(); ?>/src/images/Eduan.png" 
-                                alt="Eduan Kapp"
+                                src="<?php echo get_template_directory_uri(); ?>/src/images/Tiyiselna.png" 
+                                alt="Tiyiselani Sono"
                                 class="w-full h-full object-cover"
                                 onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/team/placeholder.jpg'"
                             >
                         </div>
                         <div>
-                            <h4 class="font-bold text-primary">Eduan Kapp</h4>
-                            <p class="text-accent font-semibold text-sm">Executive</p>
-                            <p class="text-gray-600 text-sm mt-1">30 years experience in finance and mergers & acquisitions</p>
+                            <h4 class="font-bold text-primary">Tiyiselani Sono</h4>
+                            <p class="text-accent font-semibold text-sm">Senior Associate</p>
+                            <p class="text-gray-600 text-sm mt-1">6+ years of post-admission experience in Public and Regulatory Law</p>
                         </div>
                     </div>
 
@@ -117,25 +123,49 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-3" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                             </svg>
-                            Mergers and acquisitions
+                            Corporate and Commercial Law
                         </li>
                         <li class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-3" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                             </svg>
-                            BEE structuring
+                            Administrative Law
                         </li>
                         <li class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-3" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                             </svg>
-                            Commercial contracts
+                            Public Procurement Law
                         </li>
                         <li class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-3" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                             </svg>
-                            Corporate governance
+                           Telecommunications Regulatory law
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Energy Regulatory law
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Mining Regulatory law
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Municipal Law advisory
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Public Private Partnerships (PPP)
                         </li>
                     </ul>
                     <ul class="space-y-3">
@@ -143,25 +173,33 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-3" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                             </svg>
-                            Sponsorship agreements
+                            Environmental law
+                        </li>
+                        
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Credit Regulatory law
                         </li>
                         <li class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-3" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                             </svg>
-                            SOE Restructuring
+                            Forensic Investigations
                         </li>
                         <li class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-3" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                             </svg>
-                            Joint Ventures
+                           BEE compliance
                         </li>
+                        
                         <li class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-3" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                             </svg>
-                            Company Law
+                            Public Finance Management Act advisory
                         </li>
                     </ul>
                 </div>
@@ -190,7 +228,7 @@
                         class="h-12 w-auto object-contain mb-3"
                         onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
                     > -->
-                    <p class="text-sm font-semibold text-gray-800">MTN</p>
+                    <p class="text-sm font-semibold text-gray-800">NEF</p>
                 </div>
 
                 <!-- Client 2 -->
@@ -201,7 +239,7 @@
                         class="h-12 w-auto object-contain mb-3"
                         onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
                     > -->
-                    <p class="text-sm font-semibold text-gray-800">Bidvest</p>
+                    <p class="text-sm font-semibold text-gray-800">National Credit Regulator</p>
                 </div>
 
                 <!-- Client 3 -->
@@ -212,7 +250,7 @@
                         class="h-12 w-auto object-contain mb-3"
                         onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
                     > -->
-                    <p class="text-sm font-semibold text-gray-800">SAIPA</p>
+                    <p class="text-sm font-semibold text-gray-800">PIC</p>
                 </div>
 
                 <!-- Client 4 -->
@@ -223,7 +261,7 @@
                         class="h-12 w-auto object-contain mb-3"
                         onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
                     > -->
-                    <p class="text-sm font-semibold text-gray-800">Exxaro</p>
+                    <p class="text-sm font-semibold text-gray-800">Great North Transport</p>
                 </div>
 
                 <!-- Client 5 -->
@@ -234,7 +272,7 @@
                         class="h-12 w-auto object-contain mb-3"
                         onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
                     > -->
-                    <p class="text-sm font-semibold text-gray-800">African Bank</p>
+                    <p class="text-sm font-semibold text-gray-800">Gauteng Infrastructure Department</p>
                 </div>
 
                 <!-- Client 6 -->
@@ -245,7 +283,7 @@
                         class="h-12 w-auto object-contain mb-3"
                         onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
                     > -->
-                    <p class="text-sm font-semibold text-gray-800">ArcelorMittal</p>
+                    <p class="text-sm font-semibold text-gray-800">KZN Land and Rural Development</p>
                 </div>
 
                 <!-- Client 7 -->
@@ -256,7 +294,7 @@
                         class="h-12 w-auto object-contain mb-3"
                         onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
                     > -->
-                    <p class="text-sm font-semibold text-gray-800">Rand Mutual</p>
+                    <p class="text-sm font-semibold text-gray-800">SAN Parks</p>
                 </div>
 
                 <!-- Client 8 -->
@@ -267,7 +305,7 @@
                         class="h-12 w-auto object-contain mb-3"
                         onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
                     > -->
-                    <p class="text-sm font-semibold text-gray-800">Siyanda</p>
+                    <p class="text-sm font-semibold text-gray-800">Standard Bank Group Limited</p>
                 </div>
 
                 <!-- Client 9 -->
@@ -278,18 +316,7 @@
                         class="h-12 w-auto object-contain mb-3"
                         onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
                     > -->
-                    <p class="text-sm font-semibold text-gray-800">UMK</p>
-                </div>
-
-                <!-- Client 10 -->
-                <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center justify-center h-32">
-                    <!-- <img 
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/africa-polo-logo.png" 
-                        alt="Africa Polo Network"
-                        class="h-12 w-auto object-contain mb-3"
-                        onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
-                    > -->
-                    <p class="text-sm font-semibold text-gray-800">Africa Polo</p>
+                    <p class="text-sm font-semibold text-gray-800">Onderstepoort Biological Products</p>
                 </div>
             </div>
         </div>

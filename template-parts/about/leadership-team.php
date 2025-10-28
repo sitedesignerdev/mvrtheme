@@ -10,7 +10,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             <!-- Matodzi Ratshimbilani -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-                <div class="h-80 overflow-hidden">
+                <div class="h-90 overflow-hidden">
                     <img 
                         src="<?php echo get_template_directory_uri(); ?>/src/images/Matodzi.png" 
                         alt="Matodzi Ratshimbilani - Managing Director" 
@@ -38,7 +38,7 @@
 
             <!-- Senior Partner 1 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-                <div class="h-80 overflow-hidden">
+                <div class="h-90 overflow-hidden">
                     <img 
                         src="<?php echo get_template_directory_uri(); ?>/src/images/Eduan.png" 
                         alt="Senior Partner - Corporate Law" 
@@ -61,7 +61,7 @@
 
             <!-- Senior Partner 2 -->
             <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-                <div class="h-80 overflow-hidden">
+                <div class="h-90 overflow-hidden">
                     <img 
                         src="<?php echo get_template_directory_uri(); ?>/src/images/Robyn.png" 
                         alt="Senior Partner - Dispute Resolution" 

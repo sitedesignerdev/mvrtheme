@@ -56,7 +56,7 @@
                 <!-- Key Team Members -->
                 <div class="mt-8 space-y-6">
                     <!-- Team Member 1 -->
-                    <div class="flex items-start gap-4">
+                    <!-- <div class="flex items-start gap-4">
                         <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-accent">
                             <img 
                                 src="<?php echo get_template_directory_uri(); ?>/src/images/Matodzi.png" 
@@ -64,13 +64,13 @@
                                 class="w-full h-full object-cover"
                                 onerror="this.src='<?php echo get_template_directory_uri(); ?>/src/images/team/placeholder.jpg'"
                             >
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-primary">Matodzi Ratshimbilani</h4>
-                            <p class="text-accent font-semibold text-sm">Department Lead</p>
-                            <p class="text-gray-600 text-sm mt-1">25+ years corporate commercial experience</p>
-                        </div>
-                    </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary">Matodzi Ratshimbilani</h4>
+                                <p class="text-accent font-semibold text-sm">Department Lead</p>
+                                <p class="text-gray-600 text-sm mt-1">25+ years corporate commercial experience</p>
+                            </div>
+                    </div> -->
 
                     <!-- Team Member 2 -->
                     <div class="flex items-start gap-4">
@@ -90,21 +90,21 @@
                     </div>
 
                     <!-- Team Member 3 -->
-                    <div class="flex items-start gap-4">
-                        <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-accent">
-                            <img 
-                                src="<?php echo get_template_directory_uri(); ?>/src/images/Tana.png" 
-                                alt="Tana Patsa"
-                                class="w-full h-full object-cover"
-                                onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/team/placeholder.jpg'"
-                            >
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-primary">Tana Patsa</h4>
-                            <p class="text-accent font-semibold text-sm">Associate</p>
-                            <p class="text-gray-600 text-sm mt-1">2 years post-admission experience, specializing in state-owned entities</p>
-                        </div>
-                    </div>
+                        <!-- <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-accent">
+                                <img 
+                                    src="<?php echo get_template_directory_uri(); ?>/src/images/Tana.png" 
+                                    alt="Tana Patsa"
+                                    class="w-full h-full object-cover"
+                                    onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/team/placeholder.jpg'"
+                                >
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-primary">Tana Patsa</h4>
+                                <p class="text-accent font-semibold text-sm">Associate</p>
+                                <p class="text-gray-600 text-sm mt-1">2 years post-admission experience, specializing in state-owned entities</p>
+                            </div>
+                        </div> -->
                 </div>
             </div>
 

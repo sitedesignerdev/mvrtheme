@@ -59,7 +59,11 @@
         <div class="bg-gray-200 h-80 rounded-lg overflow-hidden">
           <!-- Placeholder for team/office image -->
           <div class="w-full h-full flex items-center justify-center bg-gray-300">
-            <span class="text-gray-500">Team/Office Image</span>
+             <img 
+            src="<?php echo get_template_directory_uri(); ?>/src/images/Team-Banner.jpg" 
+            alt="MVR Attorneys Office" 
+            class="w-full h-full object-cover"
+        />
           </div>
         </div>
         <div class="absolute -bottom-6 -left-6 bg-accent text-primary p-6 rounded-lg shadow-lg">
@@ -124,7 +128,7 @@
     </div>
 
     <!-- Community Involvement -->
-    <div class="text-center max-w-3xl mx-auto">
+    <!-- <div class="text-center max-w-3xl mx-auto">
       <h2 class="text-3xl font-serif font-bold text-primary mb-6">Community Commitment</h2>
       <p class="text-gray-700 mb-8">Beyond our legal practice, we're committed to making a positive impact in our communities through pro bono work, mentorship programs, and supporting local initiatives.</p>
       <a href="#community" class="inline-flex items-center text-primary font-semibold hover:text-primary-dark transition duration-300">
@@ -133,6 +137,6 @@
           <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
         </svg>
       </a>
-    </div>
+    </div> -->
   </div>
 </section>

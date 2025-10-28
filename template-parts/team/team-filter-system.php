@@ -107,7 +107,7 @@
                             $position = get_field('position');
                             $office = get_field('office');
                             $member_seniority = function_exists('get_field') ? get_field('seniority') : '';
-                            $member_excerpt = get_the_excerpt();
+                            $excerpt = get_the_excerpt();
                             $member_practice = '';
                             $terms = get_the_terms(get_the_ID(), 'practice_area');
                             if (!empty($terms) && !is_wp_error($terms)) {
@@ -137,7 +137,7 @@
                         <h3 class="text-xl font-bold text-primary mb-1"><?php the_title(); ?></h3>
                         <?php if ($position): ?><p class="text-accent font-semibold mb-2"><?php echo esc_html($position); ?></p><?php endif; ?>
                         <?php if ($office): ?><p class="text-gray-600 text-sm mb-4"><?php echo esc_html($office); ?> Office</p><?php endif; ?>
-                        <p class="text-gray-600 mb-6 line-clamp-3"><?php echo esc_html($member_excerpt); ?></p>
+                        <p class="text-gray-600 mb-6 line-clamp-3"><?php echo esc_html($excerpt); ?></p>
                         <div class="flex justify-between items-center">
                             <div class="flex space-x-3">
                                 <?php  $linkedin = function_exists('get_field') ? get_field('linkedin') : ''; if ( $linkedin): ?>

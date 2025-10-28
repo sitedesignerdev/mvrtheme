@@ -18,7 +18,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-primary mb-2">Corporate Commercial</h3>
                     <p class="text-gray-600 mb-4">Comprehensive legal support for business formation, transactions, and corporate governance.</p>
-                    <a href="#" class="text-accent font-semibold flex items-center hover:text-primary transition-colors duration-300">
+                    <a href="<?php echo esc_url( home_url( '/corporate-commercial/' ) ); ?>" class="text-accent font-semibold flex items-center hover:text-primary transition-colors duration-300">
                         Learn more
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -37,7 +37,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-primary mb-2">Banking and Finance</h3>
                     <p class="text-gray-600 mb-4">Expert guidance on regulatory compliance, transactions, and financial structuring.</p>
-                    <a href="#" class="text-accent font-semibold flex items-center hover:text-primary transition-colors duration-300">
+                    <a href="<?php echo esc_url( home_url( '/banking-finance/' ) ); ?>" class="text-accent font-semibold flex items-center hover:text-primary transition-colors duration-300">
                         Learn more
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -56,7 +56,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-primary mb-2">Dispute Resolution</h3>
                     <p class="text-gray-600 mb-4">Strategic approaches to litigation, arbitration, and alternative dispute resolution.</p>
-                    <a href="#" class="text-accent font-semibold flex items-center hover:text-primary transition-colors duration-300">
+                    <a href="<?php echo esc_url( home_url( '/dispute-resolution/' ) ); ?>" class="text-accent font-semibold flex items-center hover:text-primary transition-colors duration-300">
                         Learn more
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -75,7 +75,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-primary mb-2">Energy Practice</h3>
                     <p class="text-gray-600 mb-4">Specialized legal support for energy sector regulations, projects, and transactions.</p>
-                    <a href="#" class="text-accent font-semibold flex items-center hover:text-primary transition-colors duration-300">
+                    <a href="<?php echo esc_url( home_url( '/energy-practice/' ) ); ?>" class="text-accent font-semibold flex items-center hover:text-primary transition-colors duration-300">
                         Learn more
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -94,7 +94,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-primary mb-2">Competition Law</h3>
                     <p class="text-gray-600 mb-4">Guidance on antitrust matters, mergers, acquisitions, and compliance issues.</p>
-                    <a href="#" class="text-accent font-semibold flex items-center hover:text-primary transition-colors duration-300">
+                    <a href="<?php echo esc_url( home_url( '/competition-law/' ) ); ?>" class="text-accent font-semibold flex items-center hover:text-primary transition-colors duration-300">
                         Learn more
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -113,7 +113,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-primary mb-2">Public Regulatory</h3>
                     <p class="text-gray-600 mb-4">Navigating complex regulatory frameworks and government compliance requirements.</p>
-                    <a href="#" class="text-accent font-semibold flex items-center hover:text-primary transition-colors duration-300">
+                    <a href="<?php echo esc_url( home_url( '/public-regulatory/' ) ); ?>" class="text-accent font-semibold flex items-center hover:text-primary transition-colors duration-300">
                         Learn more
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 极 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />

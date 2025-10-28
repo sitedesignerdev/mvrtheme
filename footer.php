@@ -142,7 +142,7 @@
     <div class="container mx-auto px-4 py-6">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="text-gray-300 text-sm mb-4 md:mb-0">
-          <p>&copy; 2023 MVR Attorneys. All rights reserved.</p>
+          <p>&copy; 2025 MVR Attorneys. All rights reserved.</p>
         </div>
         <div class="flex flex-wrap justify-center gap-6 text-sm">
           <a href="/privacy-policy" class="text-gray-300 hover:text-white transition duration-300">Privacy Policy</a>

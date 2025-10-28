@@ -15,7 +15,7 @@
     <div class="absolute inset-0 z-0">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <img 
-            src="<?php echo get_template_directory_uri(); ?>/src/images/Matodzi.png" 
+            src="<?php echo get_template_directory_uri(); ?>/src/images/Team-Banner.jpg" 
             alt="Corporate Commercial Law" 
             class="w-full h-full object-cover"
         >
@@ -62,7 +62,7 @@
                     <div class="flex items-start gap-4">
                         <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-accent">
                             <img 
-                                src="<?php echo get_template_directory_uri(); ?>/src/images/Team-Banner.jpg" 
+                                src="<?php echo get_template_directory_uri(); ?>/src/images/Robyn.png" 
                                 alt="Matodzi Ratshimbilani"
                                 class="w-full h-full object-cover"
                                 onerror="this.src='<?php echo get_template_directory_uri(); ?>/src/images/team/placeholder.jpg'"
@@ -76,7 +76,7 @@
                     </div>
 
                     <!-- Team Member 2 -->
-                    <div class="flex items-start gap-4">
+                    <!-- <div class="flex items-start gap-4">
                         <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-accent">
                             <img 
                                 src="<?php echo get_template_directory_uri(); ?>/src/images/Eduan.png" 
@@ -90,10 +90,10 @@
                             <p class="text-accent font-semibold text-sm">Executive</p>
                             <p class="text-gray-600 text-sm mt-1">30 years experience in finance and mergers & acquisitions</p>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Team Member 3 -->
-                    <div class="flex items-start gap-4">
+                    <!-- <div class="flex items-start gap-4">
                         <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-accent">
                             <img 
                                 src="<?php echo get_template_directory_uri(); ?>/src/images/Tana.png" 
@@ -107,7 +107,7 @@
                             <p class="text-accent font-semibold text-sm">Associate</p>
                             <p class="text-gray-600 text-sm mt-1">2 years post-admission experience, specializing in state-owned entities</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 

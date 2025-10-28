@@ -39,14 +39,14 @@
     <!-- Services Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       
-      <!-- Corporate Law -->
+      <!-- Competition Law -->
       <div class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition duration-300 border-l-4 border-accent">
         <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-6">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-primary mb-4">Corporate Law</h3>
+        <h3 class="text-xl font-bold text-primary mb-4">Corporate Commercial Law</h3>
         <p class="text-gray-700 mb-6">
           Comprehensive corporate legal services including entity formation, governance, compliance, and corporate restructuring.
         </p>
@@ -70,7 +70,7 @@
             Shareholder agreements
           </li>
         </ul>
-        <a href="/corporate-law" class="text-primary font-semibold hover:text-primary-dark inline-flex items-center">
+        <a href="<?php echo esc_url( home_url( '/corporate-commercial/' ) ); ?>" class="text-primary font-semibold hover:text-primary-dark inline-flex items-center">
           Learn more
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -85,7 +85,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-primary mb-4">Commercial Law</h3>
+        <h3 class="text-xl font-bold text-primary mb-4">Competition Law</h3>
         <p class="text-gray-700 mb-6">
           Expert guidance on commercial transactions, contracts, and business operations to protect your interests.
         </p>
@@ -109,7 +109,7 @@
             Regulatory compliance
           </li>
         </ul>
-        <a href="/commercial-law" class="text-primary font-semibold hover:text-primary-dark inline-flex items-center">
+         <a href="<?php echo esc_url( home_url( '/competition-law/' ) ); ?>" class="text-primary font-semibold hover:text-primary-dark inline-flex items-center">
           Learn more
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -117,14 +117,14 @@
         </a>
       </div>
 
-      <!-- Mergers & Acquisitions -->
+      <!-- Public and Regulatory -->
       <div class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition duration-300 border-l-4 border-accent">
         <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-6">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-primary mb-4">Mergers & Acquisitions</h3>
+        <h3 class="text-xl font-bold text-primary mb-4">Public and Regulatory</h3>
         <p class="text-gray-700 mb-6">
           Strategic guidance through complex M&A transactions to maximize value and minimize risk.
         </p>
@@ -148,7 +148,7 @@
             Negotiation & documentation
           </li>
         </ul>
-        <a href="/mergers-acquisitions" class="text-primary font-semibold hover:text-primary-dark inline-flex items-center">
+        <a href="<?php echo esc_url( home_url( '/public-regulatory/' ) ); ?>" class="text-primary font-semibold hover:text-primary-dark inline-flex items-center">
           Learn more
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -163,7 +163,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-primary mb-4">Contract Law</h3>
+        <h3 class="text-xl font-bold text-primary mb-4">Labour and Employment</h3>
         <p class="text-gray-700 mb-6">
           Comprehensive contract services from drafting to enforcement, ensuring your agreements protect your interests.
         </p>
@@ -187,7 +187,7 @@
             Dispute resolution
           </li>
         </ul>
-        <a href="/contract-law" class="text-primary font-semibold hover:text-primary-dark inline-flex items-center">
+       <a href="<?php echo esc_url( home_url( '/labour-and-employment/' ) ); ?>" class="text-primary font-semibold hover:text-primary-dark inline-flex items-center">
           Learn more
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -226,7 +226,7 @@
             Settlement negotiations
           </li>
         </ul>
-        <a href="/dispute-resolution" class="text-primary font-semibold hover:text-primary-dark inline-flex items-center">
+        <a href="<?php echo esc_url( home_url( '/dispute-resolution/' ) ); ?>" class="text-primary font-semibold hover:text-primary-dark inline-flex items-center">
           Learn more
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -265,7 +265,7 @@
             Policy development
           </li>
         </ul>
-        <a href="/regulatory-compliance" class="text-primary font-semibold hover:text-primary-dark inline-flex items-center">
+        <a href="<?php echo esc_url( home_url( '/public-regulatory/' ) ); ?>" class="text-primary font-semibold hover:text-primary-dark inline-flex items-center">
           Learn more
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
