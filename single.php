@@ -14,7 +14,109 @@ if ( have_posts() ) :
   while ( have_posts() ) : the_post();
     $author_id = get_the_author_meta('ID');
     $author_name = get_the_author_meta('display_name');
-    $author_avatar = get_avatar_url($author_id, array('size' => 96));
+    // Helper to normalize ACF image field (array | ID | URL) into a URL string
+    $resolve_image_url = function($raw) {
+      if (empty($raw)) {
+        return '';
+      }
+      if (is_array($raw) && !empty($raw['url'])) {
+        return $raw['url'];
+      }
+      if (is_numeric($raw)) {
+        // Use 'medium' for slightly larger images when ACF returns an attachment ID
+        return wp_get_attachment_image_url(intval($raw), 'medium') ?: '';
+      }
+      if (is_string($raw) && filter_var($raw, FILTER_VALIDATE_URL)) {
+        return $raw;
+      }
+      return '';
+    };
+
+    // 1) Try to read image_profile from the current post (if present)
+    $image_profile = $resolve_image_url(get_field('image_profile'));
+
+    // 2) If not found, check for a user-level ACF field (image stored on the WP user)
+    if (empty($image_profile) && function_exists('get_field') && $author_id) {
+      $user_field = get_field('image_profile', 'user_' . $author_id);
+      $image_profile = $resolve_image_url($user_field);
+    }
+
+    // 3) If still not found, try to find a team_member CPT authored by this WP user
+    if (empty($image_profile) && post_type_exists('team_member') && $author_id) {
+      $team_q = new WP_Query(array(
+        'post_type' => 'team_member',
+        'posts_per_page' => 1,
+        'author' => $author_id,
+        'post_status' => 'publish',
+        'fields' => 'ids',
+      ));
+      if ($team_q->have_posts()) {
+        $team_id = $team_q->posts[0];
+        $team_field = get_field('image_profile', $team_id);
+        $image_profile = $resolve_image_url($team_field);
+      }
+      wp_reset_postdata();
+    }
+
+    // If still empty, try other heuristics to find a matching team_member post
+    if (empty($image_profile) && post_type_exists('team_member')) {
+      // Prefer matching by the author's email (common ACF field on team_member)
+      $author_email = get_the_author_meta('user_email', $author_id);
+      $found = false;
+
+      if ($author_email) {
+        $q = new WP_Query(array(
+          'post_type' => 'team_member',
+          'posts_per_page' => 10,
+          'post_status' => 'publish',
+          'fields' => 'ids',
+        ));
+        if ($q->have_posts()) {
+          foreach ($q->posts as $tid) {
+            $t_email = get_field('email', $tid);
+            if ($t_email && strtolower(trim($t_email)) === strtolower(trim($author_email))) {
+              $team_field = get_field('image_profile', $tid);
+              $image_profile = $resolve_image_url($team_field);
+              $found = true;
+              break;
+            }
+          }
+        }
+        wp_reset_postdata();
+      }
+
+      // Last resort: try matching by team_member post title == author name (sanitized)
+      if (!$found) {
+        $author_slug = sanitize_title($author_name);
+        $q2 = new WP_Query(array(
+          'post_type' => 'team_member',
+          'posts_per_page' => 20,
+          'post_status' => 'publish',
+          'fields' => 'ids',
+        ));
+        if ($q2->have_posts()) {
+          foreach ($q2->posts as $tid) {
+            if (sanitize_title(get_the_title($tid)) === $author_slug) {
+              $team_field = get_field('image_profile', $tid);
+              $image_profile = $resolve_image_url($team_field);
+              $found = true;
+              break;
+            }
+          }
+        }
+        wp_reset_postdata();
+      }
+    }
+
+    // 4) Final fallbacks: author avatar, then a theme placeholder
+    if (empty($image_profile)) {
+      if (function_exists('get_avatar_url')) {
+        // Slightly larger fallback avatar
+        $image_profile = get_avatar_url($author_id, array('size' => 112));
+      } else {
+        $image_profile = get_template_directory_uri() . '/assets/images/avatar-placeholder.png';
+      }
+    }
     $post_date = get_the_date('F j, Y');
     $categories = get_the_category();
     $primary_category = !empty($categories) ? $categories[0]->name : 'Uncategorized';
@@ -50,9 +152,9 @@ if ( have_posts() ) :
 				<div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
 					<!-- Author Profile -->
 					<div class="flex items-center gap-3">
-						<div class="w-12 h-12 bg-white rounded-full overflow-hidden">
-							<img src="<?php echo esc_url($author_avatar); ?>" alt="<?php echo esc_attr($author_name); ?>" class="w-full h-full object-cover">
-						</div>
+            <div class="w-14 h-14 bg-white rounded-full overflow-hidden">
+              <img src="<?php echo esc_url($image_profile); ?>" alt="<?php echo esc_attr($author_name); ?>" class="w-full h-full object-cover">
+            </div>
 						<div class="text-left">
 							<p class="font-semibold"><?php echo esc_html($author_name); ?></p>
 							<?php if ($author_description): ?>
@@ -176,8 +278,8 @@ if ( have_posts() ) :
           <!-- Author Bio -->
           <div class="bg-gray-50 rounded-xl p-8 mt-12">
             <div class="flex flex-col md:flex-row items-start gap-6">
-              <div class="w-20 h-20 bg-primary rounded-full overflow-hidden flex-shrink-0">
-                <?php echo get_avatar(get_the_author_meta('ID'), 80, '', '', array('class' => 'w-full h-full object-cover')); ?>
+              <div class="w-24 h-24 bg-primary rounded-full overflow-hidden flex-shrink-0">
+                <?php echo get_avatar(get_the_author_meta('ID'), 112, '', '', array('class' => 'w-full h-full object-cover')); ?>
               </div>
               <div>
                 <h3 class="text-xl font-bold text-primary mb-2">About the Author</h3>

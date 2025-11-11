@@ -53,7 +53,6 @@
           <li><a href="/about" class="text-gray-300 hover:text-white transition duration-300">About Us</a></li>
           <li><a href="/services" class="text-gray-300 hover:text-white transition duration-300">Our Services</a></li>
           <li><a href="/team" class="text-gray-300 hover:text-white transition duration-300">Our Team</a></li>
-          <li><a href="/cases" class="text-gray-300 hover:text-white transition duration-300">Case Studies</a></li>
           <li><a href="/contact" class="text-gray-300 hover:text-white transition duration-300">Contact Us</a></li>
         </ul>
       </div>
@@ -62,12 +61,13 @@
       <div>
         <h3 class="text-lg font-semibold mb-6 text-accent">Practice Areas</h3>
         <ul class="space-y-3">
-          <li><a href="/corporate-law" class="text-gray-300 hover:text-white transition duration-300">Corporate Law</a></li>
-          <li><a href="/commercial-law" class="text-gray-300 hover:text-white transition duration-300">Commercial Law</a></li>
-          <li><a href="/mergers-acquisitions" class="text-gray-300 hover:text-white transition duration-300">Mergers & Acquisitions</a></li>
-          <li><a href="/contracts" class="text-gray-300 hover:text-white transition duration-300">Contract Law</a></li>
-          <li><a href="/compliance" class="text-gray-300 hover:text-white transition duration-300">Regulatory Compliance</a></li>
-          <li><a href="/dispute-resolution" class="text-gray-300 hover:text-white transition duration-300">Dispute Resolution</a></li>
+          <li> <a href="<?php echo esc_url( home_url( '/corporate-commercial/' ) ); ?>"class="text-gray-300 hover:text-white transition duration-300">Corporate Commercial Law</a></li>
+          <li><a href="<?php echo esc_url( home_url( '/banking-finance/' ) ); ?>" class="text-gray-300 hover:text-white transition duration-300">Banking and Finance</a></li>
+          <li><a href="<?php echo esc_url( home_url( '/labour-and-employment/') ); ?>" class="text-gray-300 hover:text-white transition duration-300">Labour and Employment</a></li>
+          <li><a href="<?php echo esc_url( home_url( '/public-regulatory/') ); ?>" class="text-gray-300 hover:text-white transition duration-300">Public Regulatory</a></li>
+          <li><a href="<?php echo esc_url( home_url( '/competition-law/') ); ?>" class="text-gray-300 hover:text-white transition duration-300">Competition Law</a></li>
+          <li><a href="<?php echo esc_url( home_url( '/dispute-resolution/') ); ?>" class="text-gray-300 hover:text-white transition duration-300">Dispute Resolution</a></li>
+          <li><a href="<?php echo esc_url( home_url( '/energy-practice/') ); ?>" class="text-gray-300 hover:text-white transition duration-300">Energy Practice</a></li>
         </ul>
       </div>
 

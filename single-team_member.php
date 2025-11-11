@@ -8,6 +8,7 @@ while (have_posts()) : the_post();
     $email = get_field('email');
     $phone = get_field('phone');
     $linkedin = get_field('linkedin');
+    $image_profile = get_field('image_profile');
     $education = get_field('education');
     $practice_areas = get_field('practice_areas');
     $bio = get_field('bio');
@@ -315,9 +316,9 @@ while (have_posts()) : the_post();
 </section>
 
 <!-- CTA Section -->
-<section class="py-16 bg-primary text-white">
+<section class="py-16 bg-gray-900 text-white">
     <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-serif font-bold mb-6">Schedule a Consultation</h2>
+        <h2 class="text-3xl font-sans font-bold mb-6">Schedule a Consultation</h2>
         <p class="text-xl max-w-2xl mx-auto mb-8">
             Contact <?php the_title(); ?> for expert legal advice on corporate and commercial matters.
         </p>

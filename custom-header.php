@@ -60,7 +60,7 @@
 
       <!-- Button right -->
       <div class="hidden lg:flex flex-shrink-0 ml-auto">
-        <a href="#consultation" class="bg-accent text-primary font-bold px-5 py-2 rounded hover:bg-yellow-400 transition duration-300">Schedule Consultation</a>
+        <a href="/contact" class="bg-accent text-primary font-bold px-5 py-2 rounded hover:bg-yellow-400 transition duration-300">Schedule Consultation</a>
       </div>
 
       <!-- Mobile menu button -->
@@ -112,7 +112,7 @@ class Primary_Menu_Walker extends Walker_Nav_Menu {
 
     // Override if active
     if ($is_active) {
-      $link_classes = 'text-[#fed310] visited:text-[#fed310] font-medium transition duration-200 flex items-center';
+      $link_classes = 'text-[#fed310] visited:text-[#fed310] font-medium transition duration-200 flex items-center is-active';
     }
 
     $output .= '<div class="relative group">';

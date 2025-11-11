@@ -13,10 +13,10 @@
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
         <div class="absolute inset-0 bg-black opacity-50"></div>
-        <img 
-            src="<?php echo get_template_directory_uri(); ?>/src/images/Team-Banner.jpg" 
-            alt="Corporate Commercial Law" 
-            class="w-full h-full object-cover"
+            <img 
+                src="<?php echo get_template_directory_uri(); ?>/src/images/services_bg_four.jpg" 
+                alt="Labour and Employment" 
+                class="w-full h-full object-cover object-[center_5%]"
         >
     </div>
     
@@ -293,7 +293,7 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-16 bg-primary text-white">
+<section class="py-16 bg-gray-900 text-white">
     <div class="container mx-auto px-4 text-center">
         <h2 class="text-3xl font-serif font-bold mb-6">Ready to Discuss Your Corporate Commercial Needs?</h2>
         <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">

@@ -9,11 +9,15 @@
         <!-- Team Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             <?php
+            // Replace these IDs with the actual post IDs of the team members you want to display
+            $selected_team_ids = array(120, 123, 94); // Example IDs
+            
             $team_args = array(
                 'post_type' => 'team_member',
                 'posts_per_page' => 3,
                 'post_status' => 'publish',
-                'orderby' => array('menu_order' => 'ASC', 'title' => 'ASC'),
+                'post__in' => $selected_team_ids, // This selects specific posts by ID
+                'orderby' => 'post__in', // This maintains the order you specify in the array
             );
 
             $team_loop = new WP_Query($team_args);

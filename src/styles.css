@@ -2,6 +2,12 @@
 a.mobile-menu-link:visited {
   color: #ffffff !important;
 }
+
+a:visited {
+  /* Avoid forcing white globally (breaks links on light backgrounds).
+     Let components control visited color; footer and mobile menu keep white explicitly. */
+  color: inherit !important;
+}
 /* Ensure Montserrat is applied globally */
 @layer base {
   /* Apply the theme's sans (Montserrat) site-wide so font-sans classes reflect the global font */
@@ -24,6 +30,33 @@ a.border-2.border-white.text-white:visited {
 
 a.border-2.border-white.text-white:hover {
   color: #00558D !important;
+}
+
+/* Ensure footer links keep white color when visited (override browser default/purple) */
+footer a:visited {
+  color: #ffffff !important;
+}
+
+/* Header: keep TOP-LEVEL links white (normal + visited) but allow active menu items to keep their highlight.
+   Use a selector that targets only top-level anchors emitted by the walker (nav > .group > a) so submenu
+   links inside the white dropdown aren't affected. */
+header nav > .group > a,
+header nav > .group > a:visited {
+  color: #ffffff !important;
+}
+
+/* Active top-level menu item marker (added by walker) */
+header nav > .group > a.is-active,
+header nav > .group > a.is-active:visited {
+  color: #fed310 !important; /* matches the theme's active color */
+}
+
+/* Ensure any 'primary' CTA anchors keep white text (View Profile, primary buttons) */
+a.bg-primary,
+a.bg-primary:visited,
+.bg-primary a,
+.bg-primary a:visited {
+  color: #ffffff !important;
 }
 
 @tailwind base;

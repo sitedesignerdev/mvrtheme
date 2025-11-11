@@ -1,15 +1,28 @@
-        <!-- Leadership Team -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 px-12">
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-12">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-4">Our Legal Team</h2>
+            <p class="text-xl text-gray-600">Experienced attorneys dedicated to your success</p>
+        </div>
+
+        <!-- Team Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             <?php
-            $lead_args = array(
+            // Replace these IDs with the actual post IDs of the team members you want to display
+            $selected_team_ids = array(120, 123, 94); // Example IDs
+            
+            $team_args = array(
                 'post_type' => 'team_member',
                 'posts_per_page' => 3,
                 'post_status' => 'publish',
-                'orderby' => array('menu_order' => 'ASC', 'title' => 'ASC'),
+                'post__in' => $selected_team_ids, // This selects specific posts by ID
+                'orderby' => 'post__in', // This maintains the order you specify in the array
             );
-            $lead_loop = new WP_Query($lead_args);
-            if ($lead_loop->have_posts()):
-                while ($lead_loop->have_posts()): $lead_loop->the_post();
+
+            $team_loop = new WP_Query($team_args);
+            if ($team_loop->have_posts()):
+                while ($team_loop->have_posts()): $team_loop->the_post();
                     $thumb = get_the_post_thumbnail_url(get_the_ID(), 'large');
                     $position = function_exists('get_field') ? get_field('position') : get_post_meta(get_the_ID(), 'position', true);
                     $office = function_exists('get_field') ? get_field('office') : get_post_meta(get_the_ID(), 'office', true);
@@ -49,41 +62,13 @@
             else:
             ?>
                 <div class="col-span-1">
-                    <p class="text-gray-600">No leadership team members found. Add <code>team_member</code> posts in the admin.</p>
+                    <p class="text-gray-600">No team members found. Add some <code>team_member</code> posts in the admin.</p>
                 </div>
             <?php endif; ?>
         </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.极2 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Stats Section -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-8 pt-12 border-t border-gray-200">
-            <div class="text-center">
-                <div class="text-4xl font-bold text-primary mb-2">20+</div>
-                <div class="text-gray-600">Years Average Experience</div>
-            </div>
-            <div class="text-center">
-                <div class="text-4xl font-bold text-primary mb-2">3</div>
-                <div class="text-gray-600">Senior Partners</div>
-            </div>
-            <div class="text-center">
-                <div class="text-4xl font-bold text-primary mb-2">7+</div>
-                <div class="text-gray-600">Practice Areas</div>
-            </div>
-            <div class="text-center">
-                <div class="text-4xl font-bold text-primary mb-2">100%</div>
-                <div class="text-gray-600">Client Focused</div>
-            </div>
-        </div>
 
         <!-- CTA Button -->
-        <div class="text-center mt-12">
+        <div class="text-center">
             <a href="/our-team" class="inline-block bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-800 transition duration-300">
                 Meet Our Full Team
             </a>

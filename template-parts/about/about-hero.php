@@ -3,9 +3,9 @@
     <div class="absolute inset-0 z-0">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <img 
-            src="<?php echo get_template_directory_uri(); ?>/src/images/Team-Banner.jpg" 
+            src="<?php echo get_template_directory_uri(); ?>/src/images/mvrlaw.jpg" 
             alt="MVR Attorneys Office" 
-            class="w-full h-full object-cover"
+            class="w-full h-full object-cover object-[center_10%]"
         />
     </div>
 

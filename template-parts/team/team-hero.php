@@ -5,7 +5,7 @@
         <img 
             src="<?php echo get_template_directory_uri(); ?>/src/images/Team-Banner.jpg" 
             alt="MVR Attorneys Team" 
-            class="w-full h-full object-cover"
+            class="w-full h-full object-cover object-top"
         >
     </div>
 

@@ -277,9 +277,9 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-16 bg-primary text-white">
+<section class="py-16 bg-gray-900 text-white">
   <div class="container mx-auto px-12 text-center">
-    <h2 class="text-3xl font-serif font-bold mb-6">Ready to Discuss Your Legal Needs?</h2>
+    <h2 class="text-3xl font-sans font-bold mb-6">Ready to Discuss Your Legal Needs?</h2>
     <p class="text-xl max-w-2xl mx-auto mb-8">
       Contact us today for a confidential consultation to discuss how we can support your business.
     </p>
