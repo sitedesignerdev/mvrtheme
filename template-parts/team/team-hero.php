@@ -20,7 +20,7 @@
             <!-- Stats -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
                 <div class="text-center">
-                    <div class="text-3xl md:text-4xl font-bold text-accent mb-2">15+</div>
+                    <div class="text-3xl md:text-4xl font-bold text-accent mb-2">10+</div>
                     <div class="text-sm md:text-base uppercase tracking-wide">Attorneys</div>
                 </div>
                 <div class="text-center">
@@ -38,14 +38,14 @@
             </div>
             
             <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#team-members" class="bg-accent text-primary font-bold px-8 py-4 rounded-lg text-lg hover:bg-yellow-400 transition duration-300">
+            <!-- <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>" class="bg-accent text-primary font-bold px-8 py-4 rounded-lg text-lg hover:bg-yellow-400 transition duration-300">
                     Meet Our Team
                 </a>
                 <a href="#contact" class="border-2 border-white text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-white hover:text-primary transition duration-300">
                     Contact Us
                 </a>
-            </div>
+            </div> -->
         </div>
     </div>
     

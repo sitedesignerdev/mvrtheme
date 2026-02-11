@@ -26,7 +26,7 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-primary mb-4">Senior-Level Expertise</h3>
-                <p class="text-gray-600">Our team averages 20+ years of experience, ensuring you receive counsel from seasoned legal professionals rather than junior associates.</p>
+                <p class="text-gray-600">Our team averages 25+ years of experience, ensuring you receive counsel from seasoned legal professionals rather than junior associates.</p>
             </div>
 
             <!-- Differentiator 3 -->
@@ -77,10 +77,10 @@
         <!-- CTA Section -->
         <div class="text-center mt-16 pt-12 border-t border-gray-200">
             <h3 class="text-2xl font-bold text-primary mb-6">Experience the MVR Difference</h3>
-            <a href="#consultation" class="bg-accent text-primary font-bold px-8 py-4 rounded-lg text-lg hover:bg-yellow-400 transition duration-300 inline-block mr-4">
+            <a href="<?php echo esc_url( home_url( 'contact/' ) ); ?>" class="bg-accent text-primary font-bold px-8 py-4 rounded-lg text-lg hover:bg-yellow-400 transition duration-300 inline-block mr-4">
                 Schedule Consultation
             </a>
-            <a href="/our-team" class="border-2 border-primary text-primary font-bold px-8 py-4 rounded-lg text-lg hover:bg-primary hover:text-white transition duration-300 inline-block">
+            <a href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>" class="border-2 border-primary text-primary font-bold px-8 py-4 rounded-lg text-lg hover:bg-primary hover:text-white transition duration-300 inline-block">
                 Meet Our Team
             </a>
         </div>

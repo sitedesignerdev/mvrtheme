@@ -124,48 +124,61 @@
     <?php endif; ?>
 
     <!-- Featured Article - Only ONE will display now -->
-    <?php if ($main_featured->have_posts()) : ?>
-      <?php while ($main_featured->have_posts()) : $main_featured->the_post(); 
-        $reading_time = calculate_reading_time();
-        $author_name = get_the_author_meta('display_name');
-      ?>
-      <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-12">
-        <div class="grid grid-cols-1 lg:grid-cols-2">
-          <div class="p-8 lg:p-12">
-            <div class="inline-block bg-accent text-primary px-3 py-1 rounded-full text-sm font-semibold mb-4">
-              Featured Insight
-            </div>
-            <h3 class="text-2xl font-serif font-bold text-primary mb-4">
-              <a href="<?php the_permalink(); ?>" class="hover:text-primary-dark transition duration-300">
-                <?php the_title(); ?>
-              </a>
-            </h3>
-            <p class="text-gray-700 mb-6">
-        <?php 
-        $excerpt = get_the_excerpt();
-        if (empty($excerpt)) {
-          $excerpt = wp_trim_words(get_the_content(), 20, '...');
-        } else {
-          $excerpt = wp_trim_words($excerpt, 20, '...');
-        }
-        echo esc_html($excerpt);
-        ?>
-            </p>
-            <div class="flex items-center text-sm text-gray-500 mb-6">
-              <span>By <?php echo esc_html($author_name); ?></span>
-              <span class="mx-2">•</span>
-              <span><?php echo get_the_date('F j, Y'); ?></span>
-              <span class="mx-2">•</span>
-              <span><?php echo esc_html($reading_time); ?> min read</span>
-            </div>
-            <a href="<?php the_permalink(); ?>" class="bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-dark transition duration-300 inline-flex items-center">
-              Read Featured Article
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </a>
-          </div>
-          <div class="bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center p-8">
+<?php if ($main_featured->have_posts()) : ?>
+  <?php while ($main_featured->have_posts()) : $main_featured->the_post(); 
+    $reading_time = calculate_reading_time();
+    $author_name = get_the_author_meta('display_name');
+    $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+  ?>
+  <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+      <div class="p-8 lg:p-12">
+        <div class="inline-block bg-accent text-primary px-3 py-1 rounded-full text-sm font-semibold mb-4">
+          Featured Insight
+        </div>
+        <h3 class="text-2xl font-serif font-bold text-primary mb-4">
+          <a href="<?php the_permalink(); ?>" class="hover:text-primary-dark transition duration-300">
+            <?php the_title(); ?>
+          </a>
+        </h3>
+        <p class="text-gray-700 mb-6">
+          <?php 
+          $excerpt = get_the_excerpt();
+          if (empty($excerpt)) {
+            $excerpt = wp_trim_words(get_the_content(), 30, '...');
+          } else {
+            $excerpt = wp_trim_words($excerpt, 30, '...');
+          }
+          echo esc_html($excerpt);
+          ?>
+        </p>
+        <div class="flex items-center text-sm text-gray-500 mb-6">
+          <span>By <?php echo esc_html($author_name); ?></span>
+          <span class="mx-2">•</span>
+          <span><?php echo get_the_date('F j, Y'); ?></span>
+          <span class="mx-2">•</span>
+          <span><?php echo esc_html($reading_time); ?> min read</span>
+        </div>
+        <a href="<?php the_permalink(); ?>" class="bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary-dark transition duration-300 inline-flex items-center">
+          Read Featured Article
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+      <!-- Replace the solid background with featured image -->
+      <div class="relative min-h-[400px] overflow-hidden">
+        <?php if ($featured_image_url) : ?>
+          <img 
+            src="<?php echo esc_url($featured_image_url); ?>" 
+            alt="<?php the_title_attribute(); ?>" 
+            class="w-full h-full object-cover"
+          />
+          <!-- Optional gradient overlay for better text readability -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+        <?php else : ?>
+          <!-- Fallback background if no featured image -->
+          <div class="w-full h-full bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center p-8">
             <div class="text-center text-white">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -174,10 +187,12 @@
               <p class="opacity-90 mt-2">In-depth insights from our experienced attorneys</p>
             </div>
           </div>
-        </div>
+        <?php endif; ?>
       </div>
-      <?php endwhile; wp_reset_postdata(); ?>
-    <?php endif; ?>
+    </div>
+  </div>
+  <?php endwhile; wp_reset_postdata(); ?>
+<?php endif; ?>
 
     <!-- Newsletter & CTA -->
     <div class="text-center">
@@ -186,8 +201,17 @@
         <p class="text-lg mb-6 opacity-90">
           Subscribe to our newsletter for regular updates on legal developments that impact your business.
         </p>
-        <form class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-          <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-accent">
+        <?php if ( isset( $_GET['mvr_subscribe'] ) && 'success' === $_GET['mvr_subscribe'] ): ?>
+          <div class="mb-4 p-2 rounded bg-green-100 text-green-800">Subscription successful — thanks for subscribing.</div>
+        <?php elseif ( isset( $_GET['mvr_subscribe'] ) && 'error' === $_GET['mvr_subscribe'] ): ?>
+          <div class="mb-4 p-2 rounded bg-red-100 text-red-800">There was an error processing your subscription. Please try again.</div>
+        <?php endif; ?>
+
+        <form class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post">
+          <?php wp_nonce_field( 'mvr_subscribe', 'mvr_subscribe_nonce' ); ?>
+          <input type="hidden" name="action" value="mvr_subscribe_form">
+          <input type="hidden" name="redirect_to" value="<?php echo esc_url( get_permalink() ); ?>">
+          <input type="email" name="subscriber_email" placeholder="Your email address" required class="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-accent">
           <button type="submit" class="bg-accent text-primary font-bold px-6 py-3 rounded-lg hover:bg-yellow-400 transition duration-300 whitespace-nowrap">
             Subscribe
           </button>
@@ -196,7 +220,7 @@
       </div>
       
       <div class="mt-8">
-        <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="text-primary font-semibold hover:text-primary-dark inline-flex items-center">
+        <a href="<?php echo esc_url( home_url( 'news/' ) ); ?>" class="text-primary font-semibold hover:text-primary-dark inline-flex items-center">
           View All Articles & Insights
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />

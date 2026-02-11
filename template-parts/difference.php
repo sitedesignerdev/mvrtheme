@@ -32,7 +32,7 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold text-primary mb-2">Recognized Excellence</h3>
+                        <h3 class="text-xl font-bold text-primary mb-2">Recognised Excellence</h3>
                         <p class="text-gray-600">Ranked among South Africa's top legal advisers with a proven track record of success in complex corporate matters.</p>
                     </div>
                 </div>

@@ -271,6 +271,87 @@ function register_team_practice_areas() {
 add_action('init', 'register_team_practice_areas');
 
 
+
+/**
+ * Get author profile image with ACF fallback
+ */
+function mvr_get_author_profile_image($author_id = null, $size = 'medium') {
+    if (!$author_id) {
+        $author_id = get_the_author_meta('ID');
+    }
+    
+    // Helper to normalize ACF image field
+    $resolve_image_url = function($raw, $size) {
+        if (empty($raw)) return '';
+        
+        if (is_array($raw)) {
+            // ACF image array
+            if (!empty($raw['url'])) return $raw['url'];
+            if (!empty($raw['ID'])) {
+                return wp_get_attachment_image_url($raw['ID'], $size) ?: '';
+            }
+        }
+        
+        if (is_numeric($raw)) {
+            // Attachment ID
+            return wp_get_attachment_image_url(intval($raw), $size) ?: '';
+        }
+        
+        if (is_string($raw) && filter_var($raw, FILTER_VALIDATE_URL)) {
+            // URL string
+            return $raw;
+        }
+        
+        return '';
+    };
+
+    // 1) Try user-level ACF field (stored on user profile)
+    if (function_exists('get_field')) {
+        $user_field = get_field('image_profile', 'user_' . $author_id);
+        $image_profile = $resolve_image_url($user_field, $size);
+        if ($image_profile) return $image_profile;
+    }
+
+    // 2) Try to find a team_member CPT by matching email or name
+    if (post_type_exists('team_member')) {
+        $author_email = get_the_author_meta('user_email', $author_id);
+        $author_name = get_the_author_meta('display_name', $author_id);
+        
+        $team_q = new WP_Query(array(
+            'post_type' => 'team_member',
+            'posts_per_page' => 10,
+            'post_status' => 'publish',
+            'fields' => 'ids',
+        ));
+        
+        if ($team_q->have_posts()) {
+            foreach ($team_q->posts as $team_id) {
+                // Try to match by email first (most reliable)
+                $team_email = get_field('email', $team_id);
+                if ($team_email && strtolower(trim($team_email)) === strtolower(trim($author_email))) {
+                    $team_field = get_field('image_profile', $team_id);
+                    $image_profile = $resolve_image_url($team_field, $size);
+                    if ($image_profile) return $image_profile;
+                }
+                
+                // Try to match by name
+                $team_title = get_the_title($team_id);
+                if (strtolower(trim($team_title)) === strtolower(trim($author_name))) {
+                    $team_field = get_field('image_profile', $team_id);
+                    $image_profile = $resolve_image_url($team_field, $size);
+                    if ($image_profile) return $image_profile;
+                }
+            }
+        }
+        wp_reset_postdata();
+    }
+
+    // 3) Fallback: author avatar
+    return get_avatar_url($author_id, array('size' => 96));
+}
+
+
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -344,4 +425,123 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/*
+ * Handle contact form submissions via admin-post
+ */
+function mvr_handle_contact_form() {
+    if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) ) {
+        wp_safe_redirect( home_url() );
+        exit;
+    }
+
+    $redirect = isset( $_POST['redirect_to'] ) ? esc_url_raw( $_POST['redirect_to'] ) : ( wp_get_referer() ? wp_get_referer() : home_url() );
+
+    if ( ! isset( $_POST['mvr_contact_nonce'] ) || ! wp_verify_nonce( $_POST['mvr_contact_nonce'], 'mvr_contact' ) ) {
+        wp_safe_redirect( add_query_arg( 'mvr_contact', 'error', $redirect ) );
+        exit;
+    }
+
+    $first = sanitize_text_field( $_POST['first-name'] ?? '' );
+    $last  = sanitize_text_field( $_POST['last-name'] ?? '' );
+    $email = sanitize_email( $_POST['email'] ?? '' );
+    $phone = sanitize_text_field( $_POST['phone'] ?? '' );
+    $subject_key = sanitize_text_field( $_POST['subject'] ?? '' );
+    $message_body = sanitize_textarea_field( $_POST['message'] ?? '' );
+
+    if ( empty( $first ) || empty( $last ) || ! is_email( $email ) || empty( $message_body ) ) {
+        wp_safe_redirect( add_query_arg( 'mvr_contact', 'error', $redirect ) );
+        exit;
+    }
+
+    $subjects = array(
+        'corporate-law' => 'Corporate Law',
+        'commercial-law' => 'Commercial Law',
+        'contracts' => 'Contracts',
+        'mergers-acquisitions' => 'Mergers & Acquisitions',
+        'general-inquiry' => 'General Inquiry',
+        'other' => 'Other',
+    );
+
+    $subject_label = isset( $subjects[ $subject_key ] ) ? $subjects[ $subject_key ] : 'Contact Form Submission';
+
+    $to = 'umile@netamplified.com';
+    $cc = 'umile.bhengu@gmail.com';
+
+    $subject = '[' . get_bloginfo( 'name' ) . '] ' . $subject_label . ' — ' . $first . ' ' . $last;
+
+    $message  = '<p><strong>Name:</strong> ' . esc_html( $first . ' ' . $last ) . '</p>';
+    $message .= '<p><strong>Email:</strong> ' . esc_html( $email ) . '</p>';
+    $message .= '<p><strong>Phone:</strong> ' . esc_html( $phone ) . '</p>';
+    $message .= '<p><strong>Subject:</strong> ' . esc_html( $subject_label ) . '</p>';
+    $message .= '<p><strong>Message:</strong><br>' . nl2br( esc_html( $message_body ) ) . '</p>';
+    $message .= '<p><small>Referrer: ' . esc_url( wp_get_referer() ) . '</small></p>';
+
+    $headers = array(
+        'Content-Type: text/html; charset=UTF-8',
+        'Cc: ' . $cc,
+        'Reply-To: ' . $first . ' ' . $last . ' <' . $email . '>',
+    );
+
+    $sent = wp_mail( $to, $subject, $message, $headers );
+
+    if ( $sent ) {
+        wp_safe_redirect( add_query_arg( 'mvr_contact', 'success', $redirect ) );
+    } else {
+        wp_safe_redirect( add_query_arg( 'mvr_contact', 'error', $redirect ) );
+    }
+
+    exit;
+}
+add_action( 'admin_post_nopriv_mvr_contact_form', 'mvr_handle_contact_form' );
+add_action( 'admin_post_mvr_contact_form', 'mvr_handle_contact_form' );
+
+/*
+ * Handle newsletter subscription submissions via admin-post
+ */
+function mvr_handle_subscribe_form() {
+    if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) ) {
+        wp_safe_redirect( home_url() );
+        exit;
+    }
+
+    $redirect = isset( $_POST['redirect_to'] ) ? esc_url_raw( $_POST['redirect_to'] ) : ( wp_get_referer() ? wp_get_referer() : home_url() );
+
+    if ( ! isset( $_POST['mvr_subscribe_nonce'] ) || ! wp_verify_nonce( $_POST['mvr_subscribe_nonce'], 'mvr_subscribe' ) ) {
+        wp_safe_redirect( add_query_arg( 'mvr_subscribe', 'error', $redirect ) );
+        exit;
+    }
+
+    $email = sanitize_email( $_POST['subscriber_email'] ?? '' );
+    if ( ! is_email( $email ) ) {
+        wp_safe_redirect( add_query_arg( 'mvr_subscribe', 'error', $redirect ) );
+        exit;
+    }
+
+    $to = 'umile@netamplified.com';
+    $cc = 'umile.bhengu@gmail.com';
+
+    $subject = '[' . get_bloginfo( 'name' ) . '] Newsletter subscription';
+    $message  = '<p>New newsletter subscription request</p>';
+    $message .= '<p><strong>Email:</strong> ' . esc_html( $email ) . '</p>';
+    $message .= '<p><small>Referrer: ' . esc_url( wp_get_referer() ) . '</small></p>';
+    $message .= '<p><small>IP: ' . esc_html( $_SERVER['REMOTE_ADDR'] ?? '' ) . '</small></p>';
+
+    $headers = array(
+        'Content-Type: text/html; charset=UTF-8',
+        'Cc: ' . $cc,
+    );
+
+    $sent = wp_mail( $to, $subject, $message, $headers );
+
+    if ( $sent ) {
+        wp_safe_redirect( add_query_arg( 'mvr_subscribe', 'success', $redirect ) );
+    } else {
+        wp_safe_redirect( add_query_arg( 'mvr_subscribe', 'error', $redirect ) );
+    }
+
+    exit;
+}
+add_action( 'admin_post_nopriv_mvr_subscribe_form', 'mvr_handle_subscribe_form' );
+add_action( 'admin_post_mvr_subscribe_form', 'mvr_handle_subscribe_form' );
 

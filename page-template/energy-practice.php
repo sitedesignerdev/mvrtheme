@@ -49,7 +49,7 @@
                         The Energy practice is led by <strong>Nonkosi Koranteng</strong> and <strong>Matodzi Ratshimbilani</strong>.
                     </p>
                     <p class="text-gray-700 mb-6">
-                        Nonkosi is a highly accomplished legal practitioner and consultant boasting over ten (10) years of experience in litigation, advisory and consulting.
+                        Nonkosi is a highly accomplished legal practitioner with over 20 years of experience post-admission in the energy sector. 
                     </p>
                     <p class="text-gray-700 mb-6">
                         Her cross-jurisdiction academic and professional credentials have equipped her with a robust global perspective and appreciation of global best practices. Her expertise in Oil and Gas Law / Energy Law renders her an invaluable asset to governments and international corporations.
@@ -74,7 +74,8 @@
                         <div>
                             <h4 class="font-bold text-primary">Nonkosi Koranteng</h4>
                             <p class="text-accent font-semibold text-sm">Executive – Energy Practice</p>
-                            <p class="text-gray-600 text-sm mt-1">10+ years of experience in litigation, advisory and consulting</p>
+                            <p class="text-gray-600 text-sm mt-1">20+ years’ post admission experience, specialising in Oil and Gas law and Energy law, advisory and consulting 
+</p>
                         </div>
                     </div>
 
@@ -177,7 +178,7 @@
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                <!-- Client 1 -->
+                <!-- Client 2 -->
                 <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center justify-center h-32">
                     <!-- <img 
                         src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/mtn-logo.png" 
@@ -187,6 +188,46 @@
                     > -->
                     <p class="text-sm font-semibold text-gray-800">One Stop Solar (Pty) Ltd</p>
                 </div>
+                <!-- Client 3 -->
+                <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center justify-center h-32">
+                    <!-- <img 
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/mtn-logo.png" 
+                        alt="MTN"
+                        class="h-12 w-auto object-contain mb-3"
+                        onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
+                    > -->
+                    <p class="text-sm font-semibold text-gray-800">Power China</p>
+                </div>
+                 <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center justify-center h-32">
+                    <!-- <img 
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/mtn-logo.png" 
+                        alt="MTN"
+                        class="h-12 w-auto object-contain mb-3"
+                        onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
+                    > -->
+                    <p class="text-sm font-semibold text-gray-800">Siyanda and Green</p>
+                </div>
+                 <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center justify-center h-32">
+                    <!-- <img 
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/mtn-logo.png" 
+                        alt="MTN"
+                        class="h-12 w-auto object-contain mb-3"
+                        onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
+                    > -->
+                    <p class="text-sm font-semibold text-gray-800">NERSA</p>
+                </div>
+                 <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center justify-center h-32">
+                    <!-- <img 
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/mtn-logo.png" 
+                        alt="MTN"
+                        class="h-12 w-auto object-contain mb-3"
+                        onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
+                    > -->
+                    <p class="text-sm font-semibold text-gray-800">EPTC Association </p>
+                </div>
+
+
+
 
                 
 
@@ -209,7 +250,7 @@
             <a href="/contact" class="bg-accent text-primary font-bold px-8 py-3 rounded-lg hover:bg-yellow-400 transition duration-300">
                 Schedule a Consultation
             </a>
-            <a href="/team" class="border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-primary transition duration-300">
+            <a href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>" class="border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-primary transition duration-300">
                 Meet Our Team
             </a>
         </div>

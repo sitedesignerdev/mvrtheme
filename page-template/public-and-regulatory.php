@@ -52,7 +52,7 @@
                         Matodzi seamlessly extends a wealth of expertise to the Public Law and Regulatory Team, and together with Tiyiselani Sono, advises both State-Owned Entities, Government Departments and Corporations.
                     </p>
                     <p>
-                       In this practice area Tiyiselani has more than 6 years of post-admission experience in Public and Regulatory Law, including drafting complex opinions, applying legislative interpretation, and advising on public procurement and administrative judicial proceedings. Tiyiselani further has experience in legislative drafting. 
+                       In this practice area Tiyiselani has more than 7+ years of post-admission experience in Public and Regulatory Law, including drafting complex opinions, applying legislative interpretation, and advising on public procurement and administrative judicial proceedings. Tiyiselani further has experience in legislative drafting. 
                     </p>
                     <p>
                         Tana Patsa supports the Public and Regulatory law department in conducting legal research and drafting complex advisory opinions.
@@ -74,7 +74,8 @@
                         <div>
                             <h4 class="font-bold text-primary">Matodzi Ratshimbilani</h4>
                             <p class="text-accent font-semibold text-sm">Department Lead</p>
-                            <p class="text-gray-600 text-sm mt-1">25+ years corporate commercial experience</p>
+                            <p class="text-gray-600 text-sm mt-1">25+ years’ post admission experience, specialising in Public and Regulatory law, providing specialist legal advisory services to major corporations and state-owned entities
+</p>
                         </div>
                     </div>
 
@@ -90,8 +91,9 @@
                         </div>
                         <div>
                             <h4 class="font-bold text-primary">Tiyiselani Sono</h4>
-                            <p class="text-accent font-semibold text-sm">Senior Associate</p>
-                            <p class="text-gray-600 text-sm mt-1">6+ years of post-admission experience in Public and Regulatory Law</p>
+                            <p class="text-accent font-semibold text-sm">Consultant</p>
+                            <p class="text-gray-600 text-sm mt-1">7+ years’ post admission experience, specialising in Public and Regulatory law
+</p>
                         </div>
                     </div>
 
@@ -108,7 +110,7 @@
                         <div>
                             <h4 class="font-bold text-primary">Tana Patsa</h4>
                             <p class="text-accent font-semibold text-sm">Associate</p>
-                            <p class="text-gray-600 text-sm mt-1">2 years post-admission experience, specializing in state-owned entities</p>
+                            <p class="text-gray-600 text-sm mt-1">3+ years’ post admission experience, specialising in Public and Regulatory law</p>
                         </div>
                     </div>
                 </div>
@@ -239,7 +241,7 @@
                         class="h-12 w-auto object-contain mb-3"
                         onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
                     > -->
-                    <p class="text-sm font-semibold text-gray-800">National Credit Regulator</p>
+                    <p class="text-sm font-semibold text-gray-800">RTMC</p>
                 </div>
 
                 <!-- Client 3 -->
@@ -283,7 +285,7 @@
                         class="h-12 w-auto object-contain mb-3"
                         onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
                     > -->
-                    <p class="text-sm font-semibold text-gray-800">KZN Land and Rural Development</p>
+                    <p class="text-sm font-semibold text-gray-800">NERSA</p>
                 </div>
 
                 <!-- Client 7 -->
@@ -298,16 +300,7 @@
                 </div>
 
                 <!-- Client 8 -->
-                <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center justify-center h-32">
-                    <!-- <img 
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/siyanda-logo.png" 
-                        alt="Siyanda Resources"
-                        class="h-12 w-auto object-contain mb-3"
-                        onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
-                    > -->
-                    <p class="text-sm font-semibold text-gray-800">Standard Bank Group Limited</p>
-                </div>
-
+                
                 <!-- Client 9 -->
                 <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center justify-center h-32">
                     <!-- <img 
@@ -331,10 +324,10 @@
             Contact our Corporate Commercial team for expert legal guidance on your business matters.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" class="bg-accent text-primary font-bold px-8 py-3 rounded-lg hover:bg-yellow-400 transition duration-300">
+            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="bg-accent text-primary font-bold px-8 py-3 rounded-lg hover:bg-yellow-400 transition duration-300">
                 Schedule a Consultation
             </a>
-            <a href="/team" class="border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-primary transition duration-300">
+            <a href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>" class="border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-primary transition duration-300">
                 Meet Our Team
             </a>
         </div>

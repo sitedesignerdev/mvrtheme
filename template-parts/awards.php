@@ -5,7 +5,7 @@
     <div class="text-center max-w-3xl mx-auto mb-12">
       <h2 class="text-3xl font-serif font-bold text-primary mb-4">Awards & Recognition</h2>
       <p class="text-gray-700 text-lg">
-        Our commitment to legal excellence has been recognized by leading industry publications.
+        Our commitment to legal excellence has been recognised by leading industry publications.
       </p>
     </div>
 

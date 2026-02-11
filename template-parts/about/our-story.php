@@ -7,9 +7,9 @@
                 <div class="space-y-4 text-gray-700">
                     <p class="text-lg">MVR Attorneys is a forward-thinking corporate and commercial law firm, with offices in Sandton and Cape Town, specialising in providing innovative, business-informed legal solutions. Established in 2022, our firm builds upon over 25 years of collective legal excellence and a rich heritage of industry success.</p>
                     
-                    <p class="text-lg">Led by Managing Director, Matodzi Ratshimbilani who was a co-founder of some of South Africa's leading commercial medium sized firms and has had a long career in some of South Africa's top five firms. Our leadership has propelled MVR to a distinguished position in the South African legal landscape.</p>
+                    <p class="text-lg">Led by Managing Director, Matodzi Ratshimbilani who was a co-founder of some South Africa's leading commercial medium-sized firms and has had a long career in some of South Africa's top five firms.</p>
                     
-                    <p class="text-lg">With a team of senior lawyers averaging 20 years of experience, we pride ourselves on partnering with clients to offer quality, cost-effective legal solutions that drive their business forward.</p>
+                    <p class="text-lg">Our leadership has propelled MVR to a distinguished position in the South African legal landscape with a team of senior lawyers averaging 25 years of experience, we pride ourselves on partnering with clients to offer quality, cost-effective legal solutions that drive their business forward.</p>
                 </div>
                 
                 <!-- Values List -->
@@ -74,7 +74,7 @@
                     >
                 </div>
                 <div class="absolute -bottom-6 -left-6 w-3/5 bg-primary text-white rounded-lg shadow-lg p-6">
-                    <div class="text-4xl font-bold">20+</div>
+                    <div class="text-4xl font-bold">25+</div>
                     <div class="text-accent font-semibold">Years Average Experience</div>
                     <p class="text-sm mt-2">Our senior legal team brings decades of expertise to every case</p>
                 </div>

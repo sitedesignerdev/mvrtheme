@@ -24,25 +24,25 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-primary mb-4">Sandton Office</h3>
+        <h3 class="text-xl font-bold text-primary mb-4">Johannesburg Office</h3>
         <address class="text-gray-700 not-italic mb-4">
           <p class="font-semibold">MVR Attorneys</p>
-          <p>123 Rivonia Road</p>
-          <p>Sandton, Johannesburg</p>
-          <p>2196</p>
+          <p>Suite 29 Katherine & West</p>
+          <p>114 West Street, Sandown</p>
+          <p>2057</p>
         </address>
         <div class="mt-6">
           <a href="tel:+27112345678" class="text-primary hover:text-primary-dark flex items-center justify-center mb-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            +27 11 234 5678
+            +27 11 021 7000
           </a>
-          <a href="mailto:sandton@mvrattorneys.co.za" class="text-primary hover:text-primary-dark flex items-center justify-center">
+          <a href="mailto:info@mvrlaw.co.za" class="text-primary hover:text-primary-dark flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            sandton@mvrattorneys.co.za
+            info@mvrlaw.co.za
           </a>
         </div>
       </div>
@@ -55,11 +55,11 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-primary mb-4">Claremont Office</h3>
+        <h3 class="text-xl font-bold text-primary mb-4">Cape Town Office</h3>
         <address class="text-gray-700 not-italic mb-4">
           <p class="font-semibold">MVR Attorneys</p>
-          <p>45 Main Road</p>
-          <p>Claremont, Cape Town</p>
+          <p>Venture Office Solutions, Brookside Office Park</p>
+          <p>11 Imam Haron Road, Claremont, Cape Town</p>
           <p>7708</p>
         </address>
         <div class="mt-6">
@@ -67,13 +67,13 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            +27 21 987 6543
+            +21 330 5410 
           </a>
-          <a href="mailto:claremont@mvrattorneys.co.za" class="text-primary hover:text-primary-dark flex items-center justify-center">
+          <a href="mailto:info@mvrlaw.co.za" class="text-primary hover:text-primary-dark flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            claremont@mvrattorneys.co.za
+            info@mvrlaw.co.za 
           </a>
         </div>
       </div>
@@ -88,11 +88,11 @@
         <h3 class="text-xl font-bold text-primary mb-4">General Inquiries</h3>
         <p class="text-gray-700 mb-6">For general questions or to schedule a consultation with our legal team</p>
         <div class="mt-6">
-          <a href="mailto:info@mvrattorneys.co.za" class="text-primary hover:text-primary-dark flex items-center justify-center mb-2">
+          <a href="mailto:info@mvrlaw.co.za" class="text-primary hover:text-primary-dark flex items-center justify-center mb-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            info@mvrattorneys.co.za
+            info@mvrlaw.co.za
           </a>
           <a href="#consultation" class="bg-accent text-primary font-bold px-6 py-3 rounded-lg inline-flex items-center hover:bg-yellow-400 transition duration-300 mt-4">
             Schedule Consultation
@@ -109,7 +109,17 @@
       <!-- Contact Form -->
       <div class="bg-white rounded-xl shadow-lg p-8">
         <h2 class="text-2xl font-sans font-bold text-primary mb-6">Send Us a Message</h2>
-        <form id="contact-form" class="space-y-6">
+        <?php if ( isset( $_GET['mvr_contact'] ) && 'success' === $_GET['mvr_contact'] ): ?>
+            <div class="mb-6 p-4 rounded bg-green-100 text-green-800">Message sent successfully — we will contact you shortly.</div>
+        <?php elseif ( isset( $_GET['mvr_contact'] ) && 'error' === $_GET['mvr_contact'] ): ?>
+            <div class="mb-6 p-4 rounded bg-red-100 text-red-800">There was an error sending your message. Please try again.</div>
+        <?php endif; ?>
+
+        <form id="contact-form" class="space-y-6" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post">
+          <?php wp_nonce_field( 'mvr_contact', 'mvr_contact_nonce' ); ?>
+          <input type="hidden" name="action" value="mvr_contact_form">
+          <input type="hidden" name="redirect_to" value="<?php echo esc_url( get_permalink() ); ?>">
+
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label for="first-name" class="block text-gray-700 font-medium mb-2">First Name *</label>
@@ -189,7 +199,7 @@
         </div>
 
         <!-- Emergency Contact -->
-        <div class="bg-primary text-white rounded-xl p-6">
+        <!-- <div class="bg-primary text-white rounded-xl p-6">
           <h3 class="text-xl font-bold mb-2">Urgent Legal Matter?</h3>
           <p class="mb-4 opacity-90">For urgent legal matters outside office hours, contact our emergency line:</p>
           <a href="tel:+27831234567" class="inline-flex items-center text-accent font-bold text-lg">
@@ -198,7 +208,7 @@
             </svg>
             +27 83 123 4567
           </a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

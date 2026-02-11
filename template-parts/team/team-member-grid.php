@@ -48,7 +48,7 @@
                                 </svg>
                             </a>
                         </div>
-                        <a href="/team/james-mitchell" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
+                        <a href="<?php echo esc_url( home_url( '/team/james-mitchell' ) ); ?>" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
                             View Profile
                         </a>
                     </div>
@@ -88,7 +88,7 @@
                                 </svg>
                             </a>
                         </div>
-                        <a href="/team/sarah-johnson" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
+                        <a href="<?php echo esc_url( home_url( '/team/sarah-johnson' ) ); ?>" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
                             View Profile
                         </a>
                     </div>
@@ -128,7 +128,7 @@
                                 </svg>
                             </a>
                         </div>
-                        <a href="/team/robert-williams" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
+                        <a href="<?php echo esc_url( home_url( '/team/robert-williams' ) ); ?>" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
                             View Profile
                         </a>
                     </div>
@@ -163,7 +163,7 @@
                                 </svg>
                             </a>
                         </div>
-                        <a href="/team/michael-chen" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
+                        <a href="<?php echo esc_url( home_url( '/team/michael-chen' ) ); ?>" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
                             View Profile
                         </a>
                     </div>
@@ -203,7 +203,7 @@
                                 </svg>
                             </a>
                         </div>
-                        <a href="/team/priya-patel" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
+                        <a href="<?php echo esc_url( home_url( '/team/priya-patel' ) ); ?>" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
                             View Profile
                         </a>
                     </div>
@@ -239,7 +239,7 @@
                                 </svg>
                             </a>
                         </div>
-                        <a href="/team/david-brown" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
+                        <a href="<?php echo esc_url( home_url( '/team/david-brown' ) ); ?>" class="bg-primary text-white px-4 py-2 rounded text-sm font-semibold hover:bg-blue-800 transition duration-300">
                             View Profile
                         </a>
                     </div>

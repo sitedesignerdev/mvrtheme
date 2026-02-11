@@ -85,7 +85,7 @@
                         <div>
                             <h4 class="font-bold text-primary">Eduan Kapp</h4>
                             <p class="text-accent font-semibold text-sm">Executive</p>
-                            <p class="text-gray-600 text-sm mt-1">30 years experience in finance and mergers & acquisitions</p>
+                            <p class="text-gray-600 text-sm mt-1">30 years’ experience post-admission in finance and mergers & acquisitions</p>
                         </div>
                     </div>
 
@@ -321,7 +321,7 @@
             <a href="/contact" class="bg-accent text-primary font-bold px-8 py-3 rounded-lg hover:bg-yellow-400 transition duration-300">
                 Schedule a Consultation
             </a>
-            <a href="/team" class="border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-primary transition duration-300">
+            <a href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>" class="border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-primary transition duration-300">
                 Meet Our Team
             </a>
         </div>

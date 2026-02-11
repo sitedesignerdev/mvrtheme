@@ -74,7 +74,7 @@
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold text-primary mb-2">Energy Practice</h3>
-                    <p class="text-gray-600 mb-4">Specialized legal support for energy sector regulations, projects, and transactions.</p>
+                    <p class="text-gray-600 mb-4">Specialised legal support for energy sector regulations, projects, and transactions.</p>
                     <a href="<?php echo esc_url( home_url( '/energy-practice/' ) ); ?>" class="text-accent font-semibold flex items-center hover:text-primary transition-colors duration-300">
                         Learn more
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -125,7 +125,7 @@
 
         <!-- CTA Button -->
         <div class="text-center mt-12">
-            <a href="#services" class="inline-block bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-800 transition duration-300">
+            <a href="<?php echo esc_url( home_url( 'services/' ) ); ?>" class="inline-block bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-800 transition duration-300">
                 Explore All Services
             </a>
         </div>

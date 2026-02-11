@@ -65,7 +65,7 @@
                         <div>
                             <h4 class="font-bold text-primary">Maphanga Maseko</h4>
                             <p class="text-accent font-semibold text-sm">Executive – Competition Practice and Regulatory Law and Compliance</p>
-                            <p class="text-gray-600 text-sm mt-1">10+ years experience in Competition Law</p>
+                            <p class="text-gray-600 text-sm mt-1">10+ years’ post admission experience, specialising in Competition law</p>
                         </div>
                     </div>
 
@@ -230,7 +230,7 @@
                         class="h-12 w-auto object-contain mb-3"
                         onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
                     > -->
-                    <p class="text-sm font-semibold text-gray-800">Telkom SOC Limited</p>
+                    <p class="text-sm font-semibold text-gray-800">Black Forum</p>
                 </div>
 
                 <!-- Client 7 -->
@@ -241,19 +241,12 @@
                         class="h-12 w-auto object-contain mb-3"
                         onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
                     > -->
-                    <p class="text-sm font-semibold text-gray-800">Liberty Health Proprietary Limited</p>
+                    <p class="text-sm font-semibold text-gray-800">Investment Management 
+</p>
                 </div>
 
                 <!-- Client 8 -->
-                <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center justify-center h-32">
-                    <!-- <img 
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/siyanda-logo.png" 
-                        alt="Siyanda Resources"
-                        class="h-12 w-auto object-contain mb-3"
-                        onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
-                    > -->
-                    <p class="text-sm font-semibold text-gray-800">Sasol Limited</p>
-                </div>  
+                 
 
                
             </div>
@@ -272,7 +265,7 @@
             <a href="/contact" class="bg-accent text-primary font-bold px-8 py-3 rounded-lg hover:bg-yellow-400 transition duration-300">
                 Schedule a Consultation
             </a>
-            <a href="/team" class="border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-primary transition duration-300">
+            <a href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>" class="border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-primary transition duration-300">
                 Meet Our Team
             </a>
         </div>

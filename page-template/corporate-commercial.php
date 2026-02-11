@@ -66,7 +66,8 @@ get_header();
                         <div>
                             <h4 class="font-bold text-primary">Matodzi Ratshimbilani</h4>
                             <p class="text-accent font-semibold text-sm">Department Lead</p>
-                            <p class="text-gray-600 text-sm mt-1">25+ years corporate commercial experience</p>
+                            <p class="text-gray-600 text-sm mt-1">25+ years’ post admission experience, specialising in corporate commercial law, providing specialist legal and transactional advisory services to major corporations and state-owned entities
+</p>
                         </div>
                     </div>
 
@@ -83,7 +84,7 @@ get_header();
                         <div>
                             <h4 class="font-bold text-primary">Eduan Kapp</h4>
                             <p class="text-accent font-semibold text-sm">Executive</p>
-                            <p class="text-gray-600 text-sm mt-1">30 years experience in finance and mergers & acquisitions</p>
+                            <p class="text-gray-600 text-sm mt-1">30 years’ experience post-admission in finance and mergers & acquisitions</p>
                         </div>
                     </div>
 
@@ -100,7 +101,8 @@ get_header();
                         <div>
                             <h4 class="font-bold text-primary">Tana Patsa</h4>
                             <p class="text-accent font-semibold text-sm">Associate</p>
-                            <p class="text-gray-600 text-sm mt-1">2 years post-admission experience, specializing in state-owned entities</p>
+                            <p class="text-gray-600 text-sm mt-1">3+ years' experience post-admission in corporate commercial law and mergers & acquisitions and Corporate Governance.
+</p>
                         </div>
                     </div>
                 </div>
@@ -134,6 +136,12 @@ get_header();
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                             </svg>
                             Corporate governance
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            Private Equity 
                         </li>
                     </ul>
                     <ul class="space-y-3">
@@ -247,15 +255,6 @@ get_header();
                 </div>
 
                 <!-- Client 7 -->
-                <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center justify-center h-32">
-                    <!-- <img 
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/rma-logo.png" 
-                        alt="RMA"
-                        class="h-12 w-auto object-contain mb-3"
-                        onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
-                    > -->
-                    <p class="text-sm font-semibold text-gray-800">Rand Mutual</p>
-                </div>
 
                 <!-- Client 8 -->
                 <div class="bg-white rounded-lg p-6 text-center shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center justify-center h-32">
@@ -265,7 +264,7 @@ get_header();
                         class="h-12 w-auto object-contain mb-3"
                         onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
                     > -->
-                    <p class="text-sm font-semibold text-gray-800">Siyanda</p>
+                    <p class="text-sm font-semibold text-gray-800">Siyanda Green</p>
                 </div>
 
                 <!-- Client 9 -->
@@ -276,7 +275,7 @@ get_header();
                         class="h-12 w-auto object-contain mb-3"
                         onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
                     > -->
-                    <p class="text-sm font-semibold text-gray-800">UMK</p>
+                    <p class="text-sm font-semibold text-gray-800">United Manganese of Kalahari </p>
                 </div>
 
                 <!-- Client 10 -->
@@ -287,7 +286,7 @@ get_header();
                         class="h-12 w-auto object-contain mb-3"
                         onerror="this.src='<?php echo get_template_directory_uri(); ?>/assets/images/clients/placeholder-logo.png'"
                     > -->
-                    <p class="text-sm font-semibold text-gray-800">Africa Polo</p>
+                    <p class="text-sm font-semibold text-gray-800">Africa Polo Network</p>
                 </div>
             </div>
         </div>
@@ -302,10 +301,10 @@ get_header();
             Contact our Corporate Commercial team for expert legal guidance on your business matters.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" class="bg-accent text-primary font-bold px-8 py-3 rounded-lg hover:bg-yellow-400 transition duration-300">
+            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="bg-accent text-primary font-bold px-8 py-3 rounded-lg hover:bg-yellow-400 transition duration-300">
                 Schedule a Consultation
             </a>
-            <a href="/team" class="border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-primary transition duration-300">
+            <a href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>" class="border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-primary transition duration-300">
                 Meet Our Team
             </a>
         </div>

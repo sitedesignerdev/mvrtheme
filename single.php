@@ -276,32 +276,37 @@ if ( have_posts() ) :
           </div>
           
           <!-- Author Bio -->
-          <div class="bg-gray-50 rounded-xl p-8 mt-12">
+        
+        <div class="bg-gray-50 rounded-xl p-8 mt-12">
             <div class="flex flex-col md:flex-row items-start gap-6">
-              <div class="w-24 h-24 bg-primary rounded-full overflow-hidden flex-shrink-0">
-                <?php echo get_avatar(get_the_author_meta('ID'), 112, '', '', array('class' => 'w-full h-full object-cover')); ?>
-              </div>
-              <div>
-                <h3 class="text-xl font-bold text-primary mb-2">About the Author</h3>
-                <p class="text-gray-700 mb-4">
-                  <?php 
-                  $author_description = get_the_author_meta('description');
-                  if ($author_description) {
-                    echo esc_html($author_description);
-                  } else {
-                    echo 'Read more articles by ' . get_the_author();
-                  }
-                  ?>
-                </p>
-                <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" class="text-accent font-semibold hover:text-yellow-600 transition duration-300 inline-flex items-center">
-                  View All Articles by <?php echo get_the_author(); ?>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                  </svg>
-                </a>
-              </div>
+                <div class="w-24 h-24 bg-primary rounded-full overflow-hidden flex-shrink-0">
+                    <?php if ($image_profile): ?>
+                        <img src="<?php echo esc_url($image_profile); ?>" alt="<?php echo esc_attr($author_name); ?>" class="w-full h-full object-cover">
+                    <?php else: ?>
+                        <?php echo get_avatar(get_the_author_meta('ID'), 112, '', '', array('class' => 'w-full h-full object-cover')); ?>
+                    <?php endif; ?>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-primary mb-2">About the Author</h3>
+                    <p class="text-gray-700 mb-4">
+                        <?php 
+                        $author_description = get_the_author_meta('description');
+                        if ($author_description) {
+                            echo esc_html($author_description);
+                        } else {
+                            echo 'Read more articles by ' . get_the_author();
+                        }
+                        ?>
+                    </p>
+                    <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" class="text-accent font-semibold hover:text-yellow-600 transition duration-300 inline-flex items-center">
+                        View All Articles by <?php echo get_the_author(); ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
             </div>
-          </div>
+        </div>
 
           
           <!-- Related Articles -->

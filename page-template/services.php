@@ -16,7 +16,7 @@
     <p class="text-xl max-w-3xl mx-auto mb-8">
       Comprehensive corporate and commercial legal solutions tailored to your business needs
     </p>
-    <a href="#consultation" class="bg-accent text-primary font-bold px-8 py-3 rounded-lg hover:bg-yellow-400 transition duration-300 inline-flex items-center">
+    <a href="#consultation" class="bg-accent text-primary font-bold px-8 py-4 rounded-lg text-lg hover:bg-yellow-400 transition duration-300 inline-flex items-center">
       Schedule a Consultation
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
         <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -284,10 +284,10 @@
       Contact us today for a confidential consultation to discuss how we can support your business.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="/contact" class="bg-accent text-primary font-bold px-8 py-3 rounded-lg hover:bg-yellow-400 transition duration-300">
+      <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="bg-accent text-primary font-bold px-8 py-3 rounded-lg hover:bg-yellow-400 transition duration-300">
         Schedule a Consultation
       </a>
-      <a href="/team" class="border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-primary transition duration-300">
+      <a href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>" class="border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-primary transition duration-300">
         Meet Our Team
       </a>
     </div>

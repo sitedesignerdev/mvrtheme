@@ -69,7 +69,7 @@
 
         <!-- CTA Button -->
         <div class="text-center">
-            <a href="/our-team" class="inline-block bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-800 transition duration-300">
+            <a href="<?php echo esc_url( home_url( '/our-team/' ) ); ?>" class="inline-block bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-800 transition duration-300">
                 Meet Our Full Team
             </a>
         </div>
